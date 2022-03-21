@@ -8,7 +8,7 @@ module.exports = {
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon-32x32.png',
-    organizationName: 'doge-evm',
+    organizationName: 'dogechain-lab',
     projectName: 'jury-docs',
     themes: ['docusaurus-theme-search-typesense'],
     themeConfig: {
@@ -34,7 +34,7 @@ module.exports = {
                     position: 'left'
                 },
                 {
-                    href: 'https://github.com/doge-evm/jury',
+                    href: 'https://github.com/dogechain-lab/jury',
                     position: 'right',
                     className: 'header-github-link',
                     'aria-label': 'GitHub repository',

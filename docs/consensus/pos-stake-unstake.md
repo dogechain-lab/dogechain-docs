@@ -18,7 +18,7 @@ Currently, there is no limit to the number of validators that can stake funds on
 
 ## Staking Smart Contract
 
-The repo for the Staking Smart Contract is located [here](https://github.com/doge-evm/staking-contracts).
+The repo for the Staking Smart Contract is located [here](https://github.com/dogechain-lab/staking-contracts).
 
 It holds the necessary testing scripts, ABI files and most importantly the Staking Smart Contract itself.
 
@@ -76,7 +76,7 @@ npm install
 ### Setting up the provided helper scripts
 
 Scripts for interacting with the deployed Staking Smart Contract are located on
-the [Staking Smart Contract repo](https://github.com/doge-evm/staking-contracts).
+the [Staking Smart Contract repo](https://github.com/dogechain-lab/staking-contracts).
 
 Create an `.env` file with the following parameters in the Smart Contracts repo location:
 
@@ -108,9 +108,9 @@ section.
 
 In order to become part of the validator set, an address needs to stake a certain amount of funds above a threshold.
 
-Currently, the default threshold for becoming part of the validator set is `1 ETH`.
+Currently, the default threshold for becoming part of the validator set is `1000000 Dogecoin`.
 
-Staking can be initiated by calling the `stake` method of the Staking Smart Contract, and specifying a value `>= 1 ETH`.
+Staking can be initiated by calling the `stake` method of the Staking Smart Contract, and specifying a value `>= 1000000 Dogecoin`.
 
 After the `.env` file mentioned in
 the [previous section](/docs/consensus/pos-stake-unstake#setting-up-the-provided-helper-scripts) has been set up, and a
@@ -120,10 +120,10 @@ chain has been started in PoS mode, staking can be done with the following comma
 npm run stake
 ```
 
-The `stake` Hardhat script stakes a default amount of `1 ETH`, which can be changed by modifying the `scripts/stake.ts`
+The `stake` Hardhat script stakes a default amount of `1000000 Dogecoin`, which can be changed by modifying the `scripts/stake.ts`
 file.
 
-If the funds being staked are `>= 1 ETH`, the validator set on the Staking Smart Contract is updated, and the address
+If the funds being staked are `>= 1000000 Dogecoin`, the validator set on the Staking Smart Contract is updated, and the address
 will be part of the validator set starting from the next epoch.
 
 ### Unstaking funds

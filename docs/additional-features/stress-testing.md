@@ -45,9 +45,10 @@ This section covers some basic terminology regarding the loadbot configuration.
 
 ## Start the loadbot
 
+### Transfer CASE
 As an example, here is a valid command you can use to run the loadbot using two premined accounts:
 ```bash
-jury loadbot  --jsonrpc http://127.0.0.1:10002 --grpc-address 127.0.0.1:10000 --sender 0x9A2E59d06899a383ef47C1Ec265317986D026055 --count 2000 --value 0x100 --tps 100
+jury loadbot --jsonrpc http://127.0.0.1:8545 --grpc-address 127.0.0.1:9632 --chain-id 568 --gas-price 100000000000 --sender 0x0Ea680527b44D598804c4a85C5d6695d2dd1Ef51 --receiver 0x7680d9649A1F09754e5Be58ed7d49554e82dAB03 --count 5000 --value 0x100 --tps 300
 ```
 
 You should get a result similar to this on your terminal :
@@ -55,27 +56,67 @@ You should get a result similar to this on your terminal :
 =====[LOADBOT RUN]=====
 
 [COUNT DATA]
-Transactions submitted = 2000
+Transactions submitted = 5000
 Transactions failed    = 0
 
+[APPROXIMATE TPS]
+Approximate number of transactions per second = 250
+
 [TURN AROUND DATA]
-Average transaction turn around = 3.490800s
-Fastest transaction turn around = 2.002320s
-Slowest transaction turn around = 5.006770s
-Total loadbot execution time    = 24.009350s
+Average transaction turn around = 3.022550s
+Fastest transaction turn around = 1.007790s
+Slowest transaction turn around = 4.027790s
+Total loadbot execution time    = 20.863140s
 
 [BLOCK DATA]
-Blocks required = 11
+Blocks required = 10
 
-Block #223 = 120 txns
-Block #224 = 203 txns
-Block #225 = 203 txns
-Block #226 = 202 txns
-Block #227 = 201 txns
-Block #228 = 199 txns
-Block #229 = 200 txns
-Block #230 = 199 txns
-Block #231 = 201 txns
-Block #232 = 200 txns
-Block #233 = 72 txns
+Block #3913 = 47 txns
+Block #3914 = 622 txns
+Block #3915 = 830 txns
+Block #3916 = 325 txns
+Block #3917 = 609 txns
+Block #3918 = 666 txns
+Block #3919 = 627 txns
+Block #3920 = 587 txns
+Block #3921 = 558 txns
+Block #3922 = 129 txns
+```
+
+### Deploy CASE
+As an example, here is a valid command you can use to run the loadbot using two premined accounts:
+```bash
+jury loadbot --mode deploy ---jsonrpc http://127.0.0.1:8545 --grpc-address 127.0.0.1:9632 --chain-id 568 --gas-price 100000000000 --sender 0x0Ea680527b44D598804c4a85C5d6695d2dd1Ef51 --receiver 0x7680d9649A1F09754e5Be58ed7d49554e82dAB03 --count 200 --value 0x100 --tps 10
+```
+
+You should get a result similar to this on your terminal :
+```bash
+=====[LOADBOT RUN]=====
+
+[COUNT DATA]
+Transactions submitted = 200
+Transactions failed    = 0
+
+[APPROXIMATE TPS]
+Approximate number of transactions per second = 8
+
+[TURN AROUND DATA]
+Average transaction turn around = 3.010510s
+Fastest transaction turn around = 1.003420s
+Slowest transaction turn around = 6.014310s
+Total loadbot execution time    = 23.308750s
+
+[BLOCK DATA]
+Blocks required = 10
+
+Block #84541 = 4 txns
+Block #84542 = 21 txns
+Block #84543 = 32 txns
+Block #84544 = 10 txns
+Block #84545 = 17 txns
+Block #84546 = 24 txns
+Block #84547 = 23 txns
+Block #84548 = 14 txns
+Block #84549 = 19 txns
+Block #84551 = 36 txns
 ```
