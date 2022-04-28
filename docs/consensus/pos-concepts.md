@@ -14,7 +14,7 @@ giving node operators the ability to easily choose between the two when starting
 ## PoS Features
 
 The core logic behind the Proof of Stake implementation is situated within
-the [Staking Smart Contract](https://github.com/dogechain-lab/staking-contracts/blob/main/contracts/Staking.sol).
+the [ValidatorSet Smart Contract](https://github.com/dogechain-lab/jury-contracts/blob/main/contracts/ValidatorSet.sol).
 
 This contract is pre-deployed whenever a PoS mechanism Jury chain is initialized, and is available on the address
 `0x0000000000000000000000000000000000001001` from block `0`.
@@ -29,7 +29,7 @@ Their lengths are modifiable, meaning node operators can configure the length of
 At the end of each epoch, an _epoch block_ is created, and after that event a new epoch starts. To learn more about
 epoch blocks, see the [Epoch Blocks](/docs/consensus/pos-concepts#epoch-blocks) section.
 
-Validator sets are updated at the end of each epoch. Nodes query the validator set from the Staking Smart Contract
+Validator sets are updated at the end of each epoch. Nodes query the validator set from the ValidatorSet Smart Contract
 during the creation of the epoch block, and save the obtained data to local storage. This query and save cycle is
 repeated at the end of each epoch.
 
@@ -43,20 +43,19 @@ Addresses can stake funds on the Staking Smart Contract by invoking the `stake` 
 the staked amount in the transaction:
 
 ````js
-const StakingContractFactory = await ethers.getContractFactory("Staking");
-let stakingContract = await StakingContractFactory.attach(STAKING_CONTRACT_ADDRESS)
-as
-Staking;
-stakingContract = stakingContract.connect(account);
+const ValidatorContractFactory = await ethers.getContractFactory("ValidatorSet");
+let validatorContract = await ValidatorContractFactory.attach(VALIDATOR_CONTRACT_ADDRESS) as ValidatorSet;
+validatorContract = validatorContract.connect(account);
 
-const tx = await stakingContract.stake({value: STAKE_AMOUNT})
+const tx = await validatorContract.stake(THRESHOLD);
+const receipt = await tx.wait();
 ````
 
 By staking funds on the Staking Smart Contract, addresses can enter the validator set and thus be able to participate in
 the block production process.
 
 :::info Threshold for staking
-Currently, the minimum threshold for entering the validator set is staking `1 ETH`
+Currently, the minimum threshold for entering the validator set is staking `10000000 DC`
 :::
 
 ### Unstaking
@@ -66,13 +65,11 @@ Addresses that have staked funds can only **unstake all of their staked funds at
 Unstaking can be invoked by calling the `unstake` method on the Staking Smart Contract:
 
 ````js
-const StakingContractFactory = await ethers.getContractFactory("Staking");
-let stakingContract = await StakingContractFactory.attach(STAKING_CONTRACT_ADDRESS)
-as
-Staking;
-stakingContract = stakingContract.connect(account);
+const ValidatorContractFactory = await ethers.getContractFactory("ValidatorSet");
+let validatorContract = await ValidatorContractFactory.attach(VALIDATOR_CONTRACT_ADDRESS) as ValidatorSet;
 
-const tx = await stakingContract.unstake()
+const tx = await validatorContract.connect(account).unstake();
+await tx.wait();
 ````
 
 After unstaking their funds, addresses are removed from the validator set on the Staking Smart Contract, and will not be
@@ -106,7 +103,7 @@ The default size of an epoch is `100000` blocks in the Jury.
 ## Contract pre-deployment
 
 The Jury _pre-deploys_
-the [Staking Smart Contract](https://github.com/dogechain-lab/staking-contracts/blob/main/contracts/Staking.sol)
+the [ValidatorSet Smart Contract](https://github.com/dogechain-lab/jury-contracts/blob/main/contracts/ValidatorSet.sol)
 during **genesis generation** to the address `0x0000000000000000000000000000000000001001`.
 
 It does so without a running EVM, by modifying the blockchain state of the Smart Contract directly, using the passed in

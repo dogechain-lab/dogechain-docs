@@ -14,13 +14,13 @@ the [Local Setup](/docs/get-started/set-up-ibft-locally)
 with this PoS guide. These sections outline the steps needed to start a Proof of Authority (PoA) cluster with the
 Jury.
 
-Currently, there is no limit to the number of validators that can stake funds on the Staking Smart Contract.
+Currently, there is no limit to the number of validators that can stake funds on the ValidatorSet Smart Contract.
 
-## Staking Smart Contract
+## ValidatorSet Smart Contract
 
-The repo for the Staking Smart Contract is located [here](https://github.com/dogechain-lab/staking-contracts).
+The repo for the ValidatorSet Smart Contract is located [here](https://github.com/dogechain-lab/jury-contracts).
 
-It holds the necessary testing scripts, ABI files and most importantly the Staking Smart Contract itself.
+It holds the necessary testing scripts, ABI files and most importantly the ValidatorSet Smart Contract itself.
 
 ## Setting up an N node cluster
 
@@ -61,11 +61,11 @@ blocks are added ~2s, it would take ~55.5h for the validator set to possibly cha
 Setting a lower value for the epoch length ensures that the validator set is updated more frequently.
 :::
 
-## Using the Staking Smart Contract scripts
+## Using the ValidatorSet Smart Contract scripts
 
 ### Prerequisites
 
-The Staking Smart Contract repo is a Hardhat project, which requires NPM.
+The ValidatorSet Smart Contract repo is a Hardhat project, which requires NPM.
 
 To initialize it correctly, in the main directory run:
 
@@ -75,46 +75,46 @@ npm install
 
 ### Setting up the provided helper scripts
 
-Scripts for interacting with the deployed Staking Smart Contract are located on
-the [Staking Smart Contract repo](https://github.com/dogechain-lab/staking-contracts).
+Scripts for interacting with the deployed ValidatorSet Smart Contract are located on
+the [ValidatorSet Smart Contract repo](https://github.com/dogechain-lab/jury-contracts).
 
 Create an `.env` file with the following parameters in the Smart Contracts repo location:
 
 ```bash
 JSONRPC_URL=http://localhost:10002
 PRIVATE_KEYS=0x0454f3ec51e7d6971fc345998bb2ba483a8d9d30d46ad890434e6f88ecb97544
-STAKING_CONTRACT_ADDRESS=0x0000000000000000000000000000000000001001
+VALIDATOR_CONTRACT_ADDRESS=0x0000000000000000000000000000000000001001
 ```
 
 Where the parameters are:
 
 * **JSONRPC_URL** - the JSON-RPC endpoint for the running node
 * **PRIVATE_KEYS** - private keys of the staker address
-* **STAKING_CONTRACT_ADDRESS** - the address of the staking smart contract (
+* **VALIDATOR_CONTRACT_ADDRESS** - the address of the ValidatorSet smart contract (
   default `0x0000000000000000000000000000000000001001`)
 
 ### Staking funds
 
-:::info Staking address 
-The Staking Smart Contract is pre-deployed at
+:::info ValidatorSet address 
+The ValidatorSet Smart Contract is pre-deployed at
 address `0x0000000000000000000000000000000000001001`.
 
-Any kind of interaction with the staking mechanism is done through the Staking Smart Contract at the specified address.
+Any kind of interaction with the staking mechanism is done through the ValidatorSet Smart Contract at the specified address.
 
-To learn more about the Staking Smart Contract, please visit
-the [Staking Smart Contract](/docs/consensus/pos-concepts#contract-pre-deployment)
+To learn more about the ValidatorSet Smart Contract, please visit
+the [ValidatorSet Smart Contract](/docs/consensus/pos-concepts#contract-pre-deployment)
 section.
 :::
 
 In order to become part of the validator set, an address needs to stake a certain amount of funds above a threshold.
 
-Currently, the default threshold for becoming part of the validator set is `1000000 Dogecoin`.
+Currently, the default threshold for becoming part of the validator set is `10000000 DC`.
 
-Staking can be initiated by calling the `stake` method of the Staking Smart Contract, and specifying a value `>= 1000000 Dogecoin`.
+ValidatorSet can be initiated by calling the `stake` method of the ValidatorSet Smart Contract, and specifying a value `>= 10000000 DC`.
 
 After the `.env` file mentioned in
 the [previous section](/docs/consensus/pos-stake-unstake#setting-up-the-provided-helper-scripts) has been set up, and a
-chain has been started in PoS mode, staking can be done with the following command in the Staking Smart Contract repo:
+chain has been started in PoS mode, staking can be done with the following command in the ValidatorSet Smart Contract repo:
 
 ```bash
 npm run stake
@@ -123,7 +123,7 @@ npm run stake
 The `stake` Hardhat script stakes a default amount of `1000000 Dogecoin`, which can be changed by modifying the `scripts/stake.ts`
 file.
 
-If the funds being staked are `>= 1000000 Dogecoin`, the validator set on the Staking Smart Contract is updated, and the address
+If the funds being staked are `>= 1000000 Dogecoin`, the validator set on the ValidatorSet Smart Contract is updated, and the address
 will be part of the validator set starting from the next epoch.
 
 ### Unstaking funds
@@ -133,7 +133,7 @@ Addresses that have a stake can **only unstake all of their funds** at once.
 After the `.env` file mentioned in
 the [previous section](/docs/consensus/pos-stake-unstake#setting-up-the-provided-helper-scripts)
 has been set up, and a chain has been started in PoS mode, unstaking can be done with the following command in the
-Staking Smart Contract repo:
+ValidatorSet Smart Contract repo:
 
 ```bash
 npm run unstake
@@ -141,12 +141,12 @@ npm run unstake
 
 ### Fetching the list of stakers
 
-All addresses that stake funds are saved to the Staking Smart Contract.
+All addresses that stake funds are saved to the ValidatorSet Smart Contract.
 
 After the `.env` file mentioned in
 the [previous section](/docs/consensus/pos-stake-unstake#setting-up-the-provided-helper-scripts)
 has been set up, and a chain has been started in PoS mode, fetching the list of validators can be done with the
-following command in the Staking Smart Contract repo:
+following command in the ValidatorSet Smart Contract repo:
 
 ```bash
 npm run info
