@@ -12,6 +12,12 @@ Industry standard wallets can be used to interact with Jury through the [JSON-RP
 
 To find out more about dogechain-lab, visit the [official website](https://dogecoin.community).
 
+## Dogechain testnet
+* Explorer: https://explorer-testnet.dogechain.dog
+* Chain ID:  568
+* Json RPC:  https://rpc-testnet.dogechain.dog
+* Faucet:  https://faucet.dogechain.dog
+
 **[GitHub repository](https://github.com/dogechain-lab/jury)**
 
 :::caution
