@@ -5,15 +5,15 @@ title: Manage private keys
 
 ## Overview
 
-The Jury has two types of private keys that it directly manages:
+The dogechain has two types of private keys that it directly manages:
 
 * **Private key used for the consensus mechanism**
 * **Private key used for networking by libp2p**
 
-Currently, the Jury doesn't offer support for direct account management.
+Currently, the dogechain doesn't offer support for direct account management.
 
 Based on the directory structure outlined in the [Backup & Restore guide](/docs/working-with-node/backup-restore),
-the Jury stores these mentioned key files in two distinct directories - **consensus** and **keystore**.
+the dogechain stores these mentioned key files in two distinct directories - **consensus** and **keystore**.
 
 ## Key format
 
@@ -25,7 +25,7 @@ The private keys are stored in simple **Base64 format**, so they can be human-re
 ```
 
 :::info Key Type
-All private key files generated and used inside the Jury are relying on ECDSA with the curve [secp256k1](https://en.bitcoin.it/wiki/Secp256k1).
+All private key files generated and used inside the dogechain are relying on ECDSA with the curve [secp256k1](https://en.bitcoin.it/wiki/Secp256k1).
 
 As the curve is non-standard, it cannot be encoded and stored in any standardized PEM format.
 Importing keys that don't conform to this key type is not supported.

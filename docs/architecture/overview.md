@@ -6,17 +6,17 @@ sidebar_label: Overview
 
 We started with the idea of making software that is *modular*.
 
-This is something that is present in almost all parts of the Jury. Below, you will find a brief overview of the
+This is something that is present in almost all parts of the dogechain. Below, you will find a brief overview of the
 built architecture and its layering.
 
-## Jury Layering
+## Dogechain Layering
 
-![Jury Architecture](/img/Architecture.jpg)
+![Dogechain Architecture](/img/Architecture.jpg)
 
 ## Libp2p
 
 It all starts at the base networking layer, which utilizes **libp2p**. We decided to go with this technology because it
-fits into the designing philosophies of Jury. Libp2p is:
+fits into the designing philosophies of dogechain. Libp2p is:
 
 - Modular
 - Extensible
@@ -28,7 +28,7 @@ Most importantly, it provides a great foundation for more advanced features, whi
 ## Synchronization & Consensus
 The separation of the synchronization and consensus protocols allows for modularity and implementation of **custom** sync and consensus mechanisms - depending on how the client is being run.
 
-Jury is designed to offer off-the-shelf pluggable consensus algorithms.
+Dogechain is designed to offer off-the-shelf pluggable consensus algorithms.
 
 The current list of supported consensus algorithms:
 
@@ -36,7 +36,7 @@ The current list of supported consensus algorithms:
 * IBFT PoS
 
 ## Blockchain
-The Blockchain layer is the central layer that coordinates everything in the Jury system. It is covered in depth in the corresponding *Modules* section.
+The Blockchain layer is the central layer that coordinates everything in the dogechain system. It is covered in depth in the corresponding *Modules* section.
 
 ## State
 The State inner layer contains state transition logic. It deals with how the state changes when a new block is included. It is covered in depth in the corresponding *Modules* section.

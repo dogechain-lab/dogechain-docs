@@ -5,10 +5,10 @@ title: Local Setup
 
 :::caution This guide is for testing purposes only
 
-The below guide will instruct you on how to set up a Jury network on your local machine for testing and development
+The below guide will instruct you on how to set up a dogechain network on your local machine for testing and development
 purposes.
 
-The procedure differs greatly from the way you would want to set up Jury network for a real use scenario on
+The procedure differs greatly from the way you would want to set up dogechain network for a real use scenario on
 a cloud provider: [Cloud Setup](/docs/get-started/set-up-ibft-on-the-cloud)
 
 :::
@@ -16,13 +16,13 @@ a cloud provider: [Cloud Setup](/docs/get-started/set-up-ibft-on-the-cloud)
 
 ## Requirements
 
-Refer to [Installation](/docs/get-started/installation) to install Jury.
+Refer to [Installation](/docs/get-started/installation) to install dogechain.
 
 ## Overview
 
 ![Local Setup](/img/ibft-setup/local.svg)
 
-In this guide, our goal is to establish a working `jury` blockchain network working with [IBFT consensus protocol](https://github.com/ethereum/EIPs/issues/650).
+In this guide, our goal is to establish a working `dogechain` blockchain network working with [IBFT consensus protocol](https://github.com/ethereum/EIPs/issues/650).
 The blockchain network will consist of 4 nodes of whom all 4 are validator nodes, and as such are eligible for both proposing block, and validating blocks that came from other proposers.
 All 4 nodes will run on the same machine, as the idea of this guide is to give you a fully functional IBFT cluster in the least amount of time.
 
@@ -52,19 +52,19 @@ In order to get up and running with IBFT, you need to initialize the data folder
 one for each node:
 
 ````bash
-jury secrets init --data-dir test-chain-1
+dogechain secrets init --data-dir test-chain-1
 ````
 
 ````bash
-jury secrets init --data-dir test-chain-2
+dogechain secrets init --data-dir test-chain-2
 ````
 
 ````bash
-jury secrets init --data-dir test-chain-3
+dogechain secrets init --data-dir test-chain-3
 ````
 
 ````bash
-jury secrets init --data-dir test-chain-4
+dogechain secrets init --data-dir test-chain-4
 ````
 
 Each of these commands will print the validator key and the [node ID](https://docs.libp2p.io/concepts/peer-id/). You will need the Node ID of the first node for the next step.
@@ -74,8 +74,8 @@ Each of these commands will print the validator key and the [node ID](https://do
 For a node to successfully establish connectivity, it must know which `bootnode` server to connect to in order to gain
 information about all the remaining nodes on the network. The `bootnode` is sometimes also known as the `rendezvous` server in p2p jargon.
 
-`bootnode` is not a special instance of the jury node. Every jury node can serve as a `bootnode`, but
-every jury node needs to have a set of bootnodes specified which will be contacted to provide information on how to connect with
+`bootnode` is not a special instance of the dogechain node. Every dogechain node can serve as a `bootnode`, but
+every dogechain node needs to have a set of bootnodes specified which will be contacted to provide information on how to connect with
 all remaining nodes in the network.
 
 To create the connection string for specifying the bootnode, we will need to conform 
@@ -99,7 +99,7 @@ Since we are running on localhost, it is safe to assume that the `<ip_address>` 
 
 For the `<port>` we will use `10001` since we will configure the libp2p server for `node 1` to listen on this port later.
 
-And lastly, we need the `<node_id>` which we can get from the output of the previously ran command `jury secrets init --data-dir test-chain-1` command (which was used to generate keys and data directories for the `node1`)
+And lastly, we need the `<node_id>` which we can get from the output of the previously ran command `dogechain secrets init --data-dir test-chain-1` command (which was used to generate keys and data directories for the `node1`)
 
 After the assembly, the multiaddr connection string to the `node 1` which we will use as the bootnode will look something like this (only the `<node_id>` which is at the end should be different):
 ```
@@ -113,12 +113,12 @@ Similarly, we construct the multiaddr for second bootnode as shown below
 ## Step 3: Generate the genesis file with the 4 nodes as validators
 
 ````bash
-jury genesis --consensus ibft --ibft-validators-prefix-path test-chain- --bootnode /ip4/127.0.0.1/tcp/10001/p2p/16Uiu2HAmJxxH1tScDX2rLGSU9exnuvZKNM9SoK3v315azp68DLPW --bootnode /ip4/127.0.0.1/tcp/20001/p2p/16Uiu2HAmS9Nq4QAaEiogE4ieJFUYsoH28magT7wSvJPpfUGBj3Hq 
+dogechain genesis --consensus ibft --ibft-validators-prefix-path test-chain- --bootnode /ip4/127.0.0.1/tcp/10001/p2p/16Uiu2HAmJxxH1tScDX2rLGSU9exnuvZKNM9SoK3v315azp68DLPW --bootnode /ip4/127.0.0.1/tcp/20001/p2p/16Uiu2HAmS9Nq4QAaEiogE4ieJFUYsoH28magT7wSvJPpfUGBj3Hq 
 ````
 
 What this command does:
 
-* The `--ibft-validators-prefix-path` sets the prefix folder path to the one specified which IBFT in Jury can
+* The `--ibft-validators-prefix-path` sets the prefix folder path to the one specified which IBFT in dogechain can
   use. This directory is used to house the `consensus/` folder, where the validator's private key is kept. The
   validator's public key is needed in order to build the genesis file - the initial list of bootstrap nodes.
   This flag only makes sense when setting up the network on localhost, as in a real-world scenario we cannot expect all
@@ -276,7 +276,7 @@ file locks                      (-x) unlimited
 
 ## Step 4: Run all the clients
 
-Because we are attempting to run a Jury network consisting of 4 nodes all on the same machine, we need to take care to 
+Because we are attempting to run a dogechain network consisting of 4 nodes all on the same machine, we need to take care to 
 avoid port conflicts. This is why we will use the following reasoning for determining the listening ports of each server of a node:
 
 - `10000` for the gRPC server of `node 1`, `20000` for the GRPC server of `node 2`, etc.
@@ -286,25 +286,25 @@ avoid port conflicts. This is why we will use the following reasoning for determ
 To run the **first** client (note the port `10001` since it was used as a part of the libp2p multiaddr in **step 2** alongside node 1's Node ID):
 
 ````bash
-jury server --data-dir ./test-chain-1 --chain genesis.json --grpc :10000 --libp2p :10001 --jsonrpc :10002 --seal
+dogechain server --data-dir ./test-chain-1 --chain genesis.json --grpc :10000 --libp2p :10001 --jsonrpc :10002 --seal
 ````
 
 To run the **second** client:
 
 ````bash
-jury server --data-dir ./test-chain-2 --chain genesis.json --grpc :20000 --libp2p :20001 --jsonrpc :20002 --seal
+dogechain server --data-dir ./test-chain-2 --chain genesis.json --grpc :20000 --libp2p :20001 --jsonrpc :20002 --seal
 ````
 
 To run the **third** client:
 
 ````bash
-jury server --data-dir ./test-chain-3 --chain genesis.json --grpc :30000 --libp2p :30001 --jsonrpc :30002 --seal
+dogechain server --data-dir ./test-chain-3 --chain genesis.json --grpc :30000 --libp2p :30001 --jsonrpc :30002 --seal
 ````
 
 To run the **fourth** client:
 
 ````bash
-jury server --data-dir ./test-chain-4 --chain genesis.json --grpc :40000 --libp2p :40001 --jsonrpc :40002 --seal
+dogechain server --data-dir ./test-chain-4 --chain genesis.json --grpc :40000 --libp2p :40001 --jsonrpc :40002 --seal
 ````
 
 To briefly go over what has been done so far:
@@ -318,7 +318,7 @@ To briefly go over what has been done so far:
 
 The structure of the genesis file is covered in the [CLI Commands](/docs/get-started/cli-commands) section.
 
-After running the previous commands, you have set up a 4 node Jury network, capable of sealing blocks and recovering
+After running the previous commands, you have set up a 4 node dogechain network, capable of sealing blocks and recovering
 from node failure.
 
 :::info Start the client using config file
@@ -326,12 +326,12 @@ from node failure.
 Instead of specifying all configuration parameters as CLI arguments, the Client can also be started using a config file by executing the following command: 
 
 ````bash 
-jury server --config <config_file_path>
+dogechain server --config <config_file_path>
 ````
 Example:
 
 ````bash
-jury server --config ./test/config-node1.json
+dogechain server --config ./test/config-node1.json
 ````
 Currently, we only support `json` based configuration file, sample config file can be found [here](/docs/sample-config)
 
@@ -342,17 +342,17 @@ Currently, we only support `json` based configuration file, sample config file c
 A Non-validator will always sync the latest blocks received from the validator node, you can start a non-validator node by running the following command.
 
 ````bash 
-jury server --data-dir <directory_path> --chain <genesis_filename> --grpc <portNo> --libp2p <portNo> --jsonrpc <portNo>
+dogechain server --data-dir <directory_path> --chain <genesis_filename> --grpc <portNo> --libp2p <portNo> --jsonrpc <portNo>
 ````
 For example, you can add **fifth** Non-validator client by executing the following command :
 
 ````bash
-jury server --data-dir ./test-chain --chain genesis.json --grpc :50000 --libp2p :50001 --jsonrpc :50002 
+dogechain server --data-dir ./test-chain --chain genesis.json --grpc :50000 --libp2p :50001 --jsonrpc :50002 
 ````
 :::
 
 :::info Specify the price limit
-A Jury node can be started with a set **price limit** for incoming transactions.
+A dogechain node can be started with a set **price limit** for incoming transactions.
 
 The unit for the price limit is `wei`.
 
@@ -366,14 +366,14 @@ The default value for the price limit is `0`, meaning it is not enforced at all 
 
 Example of using the `--price-limit` flag:
 ````bash
-jury server --price-limit 100000 ...
+dogechain server --price-limit 100000 ...
 ````
 
 It is worth noting that price limits **are enforced only on non-local transactions**, meaning
 that the price limit does not apply to transactions added locally on the node.
 :::
 
-## Step 5: Interact with the jury network
+## Step 5: Interact with the dogechain network
 
 Now that you've set up at least 1 running client, you can go ahead and interact with the blockchain using the account you premined above
 and by specifying the JSON-RPC URL to any of the 4 nodes:

@@ -1,10 +1,10 @@
 {
-  "index_name": "jury-docs.dogecoin.community",
+  "index_name": "docs.dogechain.dog",
   "start_urls": [
-    "https://jury-docs.dogecoin.community"
+    "https://docs.dogechain.dog"
   ],
   "sitemap_urls": [
-    "https://jury-docs.dogecoin.community/sitemap.xml"
+    "https://docs.dogechain.dog/sitemap.xml"
   ],
   "stop_urls": [],
   "sitemap_alternate_links": true,

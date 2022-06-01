@@ -78,10 +78,10 @@ Run the command and see live results from our testnet.
 
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":1}'
 ````
 
-<JsonRpcTerminal method="eth_chainId" params={[]} network="https://rpc.poa.psdk.io:8545"/>
+<JsonRpcTerminal method="eth_chainId" params={[]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_syncing
 
@@ -108,10 +108,10 @@ Run the command and see live results from our testnet.
 
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_syncing","params":[],"id":1}'
 ````
 
-<JsonRpcTerminal method="eth_syncing" params={[]} network="https://rpc.poa.psdk.io:8545"/>
+<JsonRpcTerminal method="eth_syncing" params={[]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_getBlockByNumber
 
@@ -153,10 +153,10 @@ Run the command and see live results from our testnet.
 
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest", true],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest", true],"id":1}'
 ````
 
-<JsonRpcTerminal method="eth_getBlockByNumber" params={["latest", true]} network="https://rpc.poa.psdk.io:8545"/>
+<JsonRpcTerminal method="eth_getBlockByNumber" params={["latest", true]} network="https://rpc-testnet.dogechain.dog"/>
 
 
 ### eth_getBlockByHash
@@ -196,7 +196,7 @@ Returns block information by hash.
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getBlockByHash","params":["0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae",false],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getBlockByHash","params":["0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae",false],"id":1}'
 ````
 
 ### eth_blockNumber
@@ -219,10 +219,10 @@ Run the command and see live results from our testnet.
 
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
 ````
 
-<JsonRpcTerminal method="eth_blockNumber" params={[]} network="https://rpc.poa.psdk.io:8545"/>
+<JsonRpcTerminal method="eth_blockNumber" params={[]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_gasPrice
 
@@ -244,10 +244,10 @@ Run the command and see live results from our testnet.
 
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_gasPrice","params":[],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_gasPrice","params":[],"id":1}'
 ````
 
-<JsonRpcTerminal method="eth_gasPrice" params={[]} network="https://rpc.poa.psdk.io:8545"/>
+<JsonRpcTerminal method="eth_gasPrice" params={[]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_getBalance
 
@@ -267,7 +267,7 @@ Returns the balance of the account of the given address.
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0x407d73d8a49eeb85d32cf465507dd71d507100c1", "latest"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0x407d73d8a49eeb85d32cf465507dd71d507100c1", "latest"],"id":1}'
 ````
 
 ### eth_sendRawTransaction
@@ -287,7 +287,7 @@ Creates new message call transaction or a contract creation for signed transacti
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_sendRawTransaction","params":["0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_sendRawTransaction","params":["0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"],"id":1}'
 ````
 
 ### eth_sendTransaction
@@ -314,7 +314,7 @@ Creates new message call transaction or a contract creation, if the data field c
 <h4><i>Example:</i></h4>
 
 ````bash
-curl https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{"from": "0xb60e8dd61c5d32be8058bb8eb970870f07233155","to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567","gas": "0x76c0", "gasPrice": "0x9184e72a000", "value": "0x9184e72a", "data": "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"}],"id":1}'
+curl https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{"from": "0xb60e8dd61c5d32be8058bb8eb970870f07233155","to": "0xd46e8dd67c5d32be8058bb8eb970870f07244567","gas": "0x76c0", "gasPrice": "0x9184e72a000", "value": "0x9184e72a", "data": "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"}],"id":1}'
 ````
 
 ### eth_getTransactionByHash
@@ -349,7 +349,7 @@ Returns the information about a transaction requested by transaction hash.
 
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","params":["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","params":["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],"id":1}'
 ````
 
 ### eth_getTransactionReceipt
@@ -387,7 +387,7 @@ It also returns either :
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getTransactionReceipt","params":["0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getTransactionReceipt","params":["0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238"],"id":1}'
 ````
 
 ### eth_getTransactionCount
@@ -408,7 +408,7 @@ Returns the number of transactions sent from an address.
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getTransactionCount","params":["0x407d73d8a49eeb85d32cf465507dd71d507100c1","latest"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getTransactionCount","params":["0x407d73d8a49eeb85d32cf465507dd71d507100c1","latest"],"id":1}'
 ````
 
 ### eth_getBlockTransactionCountByNumber
@@ -430,10 +430,10 @@ Returns the number of transactions in a block matching the given block number.
 Run the command and see live results from our testnet.
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getBlockTransactionCountByNumber","params":["latest"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getBlockTransactionCountByNumber","params":["latest"],"id":1}'
 ````
 
-<JsonRpcTerminal method="eth_getBlockTransactionCountByNumber" params={[]} network="https://rpc.poa.psdk.io:8545"/>
+<JsonRpcTerminal method="eth_getBlockTransactionCountByNumber" params={[]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_getLogs
 
@@ -457,7 +457,7 @@ Returns an array of all logs matching a given filter object.
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getLogs","params":[{"topics": ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]}],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getLogs","params":[{"topics": ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]}],"id":1}'
 ````
 
 
@@ -479,7 +479,7 @@ Returns code at a given address.
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getCode","params":["0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x2"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getCode","params":["0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x2"],"id":1}'
 ````
 
 ### eth_call
@@ -506,7 +506,7 @@ Executes a new message call immediately without creating a transaction on the bl
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_call","params":[{see above}],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_call","params":[{see above}],"id":1}'
 ````
 
 ### eth_getStorageAt
@@ -528,7 +528,7 @@ Returns the value from a storage position at a given address.
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getStorageAt","params":["0x295a70b2de5e3953354a6a8344e616ed314d7251", "0x0", "latest"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getStorageAt","params":["0x295a70b2de5e3953354a6a8344e616ed314d7251", "0x0", "latest"],"id":1}'
 ````
 
 ### eth_estimateGas
@@ -558,7 +558,7 @@ Expect that all properties are optional.
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_estimateGas","params":[{see above}],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_estimateGas","params":[{see above}],"id":1}'
 ````
 
 ### eth_newFilter
@@ -583,7 +583,7 @@ To check if the state has changed, call eth_getFilterChanges.
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_newFilter","params":[{"topics":["0x12341234"]}],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_newFilter","params":[{"topics":["0x12341234"]}],"id":1}'
 ````
 
 ### eth_newBlockFilter
@@ -606,10 +606,10 @@ None
 Run the command and see live results from our testnet.
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_newBlockFilter","params":[],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_newBlockFilter","params":[],"id":1}'
 ````
 
-<JsonRpcTerminal method="eth_newBlockFilter" params={[]} network="https://rpc.poa.psdk.io:8545"/>
+<JsonRpcTerminal method="eth_newBlockFilter" params={[]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_getFilterChanges
 
@@ -640,7 +640,7 @@ Polling method for a filter, which returns an array of logs that occurred since 
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getFilterChanges","params":["0x16"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getFilterChanges","params":["0x16"],"id":1}'
 ````
 
 ### eth_uninstallFilter
@@ -661,7 +661,7 @@ Additionally, filters timeout when they aren’t requested with eth_getFilterCha
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_uninstallFilter","params":["0xb"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_uninstallFilter","params":["0xb"],"id":1}'
 ````
 
 ### eth_unsubscribe
@@ -681,7 +681,7 @@ Subscriptions are cancelled with a regular RPC call with eth_unsubscribe as a me
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_unsubscribe","params":["0x9cef478923ff08bf67fde6c64013158d"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_unsubscribe","params":["0x9cef478923ff08bf67fde6c64013158d"],"id":1}'
 ````
 
 ## net
@@ -706,10 +706,10 @@ Run the command and see live results from our testnet.
 
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":83}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"net_version","params":[],"id":83}'
 ````
 
-<JsonRpcTerminal method="net_version" params={[]} network="https://rpc.poa.psdk.io:8545"/>
+<JsonRpcTerminal method="net_version" params={[]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### net_listening
 
@@ -731,10 +731,10 @@ Run the command and see live results from our testnet.
 
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"net_listening","params":[],"id":83}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"net_listening","params":[],"id":83}'
 ````
 
-<JsonRpcTerminal method="net_listening" params={[]} network="https://rpc.poa.psdk.io:8545"/>
+<JsonRpcTerminal method="net_listening" params={[]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### net_peerCount
 
@@ -756,10 +756,10 @@ Run the command and see live results from our testnet.
 
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":1}'
 ````
 
-<JsonRpcTerminal method="net_peerCount" params={[]} network="https://rpc.poa.psdk.io:8545"/>
+<JsonRpcTerminal method="net_peerCount" params={[]} network="https://rpc-testnet.dogechain.dog"/>
 
 ## web3
 
@@ -783,10 +783,10 @@ Run the command and see live results from our testnet.
 
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}'
 ````
 
-<JsonRpcTerminal method="web3_clientVersion" params={[]} network="https://rpc.poa.psdk.io:8545"/>
+<JsonRpcTerminal method="web3_clientVersion" params={[]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### web3_sha3
 
@@ -808,10 +808,10 @@ Run the command and see live results from our testnet.
 
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"web3_sha3","params":["0x68656c6c6f20776f726c64"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"web3_sha3","params":["0x68656c6c6f20776f726c64"],"id":1}'
 ````
 
-<JsonRpcTerminal method="web3_sha3" params={["0x68656c6c6f20776f726c64"]} network="https://rpc.poa.psdk.io:8545"/>
+<JsonRpcTerminal method="web3_sha3" params={["0x68656c6c6f20776f726c64"]} network="https://rpc-testnet.dogechain.dog"/>
 
 ## TxPool
 
@@ -832,10 +832,10 @@ Run the command and see live results from our testnet.
 
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"txpool_content","params":[],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"txpool_content","params":[],"id":1}'
 ````
 
-<JsonRpcTerminal method="txpool_content" params={[]} network="https://rpc.poa.psdk.io:8545"/>
+<JsonRpcTerminal method="txpool_content" params={[]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### txpool_inspect
 
@@ -854,10 +854,10 @@ Run the command and see live results from our testnet.
 
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"txpool_inspect","params":[],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"txpool_inspect","params":[],"id":1}'
 ````
 
-<JsonRpcTerminal method="txpool_inspect" params={[]} network="https://rpc.poa.psdk.io:8545"/>
+<JsonRpcTerminal method="txpool_inspect" params={[]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### txpool_status
 
@@ -875,7 +875,7 @@ Run the command and see live results from our testnet.
 
 
 ````bash
-curl  https://rpc.poa.psdk.io:8545 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"txpool_status","params":[],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"txpool_status","params":[],"id":1}'
 ````
 
-<JsonRpcTerminal method="txpool_status" params={[]} network="https://rpc.poa.psdk.io:8545"/>
+<JsonRpcTerminal method="txpool_status" params={[]} network="https://rpc-testnet.dogechain.dog"/>

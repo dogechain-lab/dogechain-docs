@@ -5,11 +5,11 @@ title: Minimal
 
 ## Overview
 
-As mentioned before, Jury is a set of different modules, all connected to each other.<br />
+As mentioned before, Dogechain is a set of different modules, all connected to each other.<br />
 The **Blockchain** is connected to the **State**, or for example, **Synchronization**, which pipes new blocks into the **Blockchain**.
 
 **Minimal** is the cornerstone for these inter-connected modules. <br />
-It acts as a central hub for all the services that run on the Jury.
+It acts as a central hub for all the services that run on the dogechain.
 
 ## Startup Magic
 

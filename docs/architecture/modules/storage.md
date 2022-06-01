@@ -5,9 +5,9 @@ title: Storage
 
 ## Overview
 
-The Jury currently utilizes **LevelDB** for data storage, as well as an **in-memory** data store.
+The dogechain currently utilizes **LevelDB** for data storage, as well as an **in-memory** data store.
 
-Throughout the Jury, when modules need to interact with the underlying data store, 
+Throughout the dogechain, when modules need to interact with the underlying data store, 
 they don't need to know which DB engine or service they're speaking to.
 
 The DB layer is abstracted away between a module called **Storage**, which exports interfaces that modules query.
@@ -56,7 +56,7 @@ type Storage interface {
 
 ### Prefixes
 
-In order to make querying the LevelDB storage deterministic, and to avoid key storage clashing, the Jury leverages
+In order to make querying the LevelDB storage deterministic, and to avoid key storage clashing, the dogechain leverages
 prefixes and sub-prefixes when storing data
 
 ````go title="blockchain/storage/keyvalue.go"

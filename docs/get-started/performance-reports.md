@@ -2,7 +2,7 @@
 
 Our goal is to make a highly-performant, feature-rich and easy to setup and maintain blcokchain client software.
 
-All tests were done using the [Jury Loadbot](../additional-features/stress-testing.md).
+All tests were done using the [Dogechain Loadbot](../additional-features/stress-testing.md).
 
 Every performance report you will find on this page is properly dated, environment clearly described and the testing method clearly explained.
 
@@ -85,7 +85,7 @@ since block gas limit & block time are set to sane values that don't consume muc
     <div>
         <table>
             <tr>
-                <td>Jury version</td>
+                <td>Dogechain version</td>
                 <td>Commit <a href="https://github.com/0xPolygon/polygon-edge/commit/8a033aa1afb191abdac04636d318f83f32511f3c">8a033aa1afb191abdac04636d318f83f32511f3c</a> on develop branch</td>
             </tr>
             <tr>
@@ -246,7 +246,7 @@ since block gas limit & block time are set to sane values that don't consume muc
     <div>
         <table>
             <tr>
-                <td>Jury version</td>
+                <td>Dogechain version</td>
                 <td>Commit <a href="https://github.com/0xPolygon/polygon-edge/commit/8a033aa1afb191abdac04636d318f83f32511f3c">8a033aa1afb191abdac04636d318f83f32511f3c</a> on develop branch</td>
             </tr>
             <tr>
@@ -446,7 +446,7 @@ and since block gas limit & block time are set to sane values that don't consume
     <div>
         <table>
             <tr>
-                <td>Jury version</td>
+                <td>Dogechain version</td>
                 <td>Commit <a href="https://github.com/0xPolygon/polygon-edge/commit/8377162281d1a2e4342ae27cd4e5367c4364aee2">8377162281d1a2e4342ae27cd4e5367c4364aee2</a> on develop branch</td>
             </tr>
             <tr>

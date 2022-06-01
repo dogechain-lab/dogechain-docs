@@ -1,6 +1,6 @@
 {
-  "name": "jury-docs",
-  "version": "0.0.0",
+  "name": "dogechain-docs",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",

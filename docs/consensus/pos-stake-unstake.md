@@ -5,26 +5,26 @@ title: Set up and use Proof of Stake (PoS)
 
 ## Overview
 
-This guide goes into detail on how to set up a Proof of Stake network with the Jury, how to stake funds for nodes
+This guide goes into detail on how to set up a Proof of Stake network with the dogechain, how to stake funds for nodes
 to become validators and how to unstake funds.
 
 It **highly encouraged** to read and go through
 the [Local Setup](/docs/get-started/set-up-ibft-locally)
 / [Cloud Setup](/docs/get-started/set-up-ibft-on-the-cloud) sections, before going along
 with this PoS guide. These sections outline the steps needed to start a Proof of Authority (PoA) cluster with the
-Jury.
+dogechain.
 
 Currently, there is no limit to the number of validators that can stake funds on the ValidatorSet Smart Contract.
 
 ## ValidatorSet Smart Contract
 
-The repo for the ValidatorSet Smart Contract is located [here](https://github.com/dogechain-lab/jury-contracts).
+The repo for the ValidatorSet Smart Contract is located [here](https://github.com/dogechain-lab/dogechain-contracts).
 
 It holds the necessary testing scripts, ABI files and most importantly the ValidatorSet Smart Contract itself.
 
 ## Setting up an N node cluster
 
-Setting up a network with the Jury is covered in
+Setting up a network with the dogechain is covered in
 the [Local Setup](/docs/get-started/set-up-ibft-locally)
 / [Cloud Setup](/docs/get-started/set-up-ibft-on-the-cloud) sections.
 
@@ -33,7 +33,7 @@ The **only difference** between setting up a PoS and PoA cluster is in the genes
 **When generating the genesis file for a PoS cluster, an additional flag is needed `--pos`**:
 
 ```bash
-jury genesis --pos ...
+dogechain genesis --pos ...
 ```
 
 ## Setting the length of an epoch
@@ -44,7 +44,7 @@ To set the size of an epoch for a cluster (in blocks), when generating the genes
 specified `--epoch-size`:
 
 ```bash
-jury genesis --epoch-size 50
+dogechain genesis --epoch-size 50
 ```
 
 This value specified in the genesis file that the epoch size should be `50` blocks.
@@ -76,7 +76,7 @@ npm install
 ### Setting up the provided helper scripts
 
 Scripts for interacting with the deployed ValidatorSet Smart Contract are located on
-the [ValidatorSet Smart Contract repo](https://github.com/dogechain-lab/jury-contracts).
+the [ValidatorSet Smart Contract repo](https://github.com/dogechain-lab/dogechain-contracts).
 
 Create an `.env` file with the following parameters in the Smart Contracts repo location:
 

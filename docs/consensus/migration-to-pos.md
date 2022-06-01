@@ -12,7 +12,7 @@ This section guides you through the migration from PoA to PoS IBFT modes, and vi
 You will need to stop all nodes, add fork configuration into genesis.json by `ibft switch` command, and restart the nodes.
 
 ````bash
-jury ibft switch --chain ./genesis.json --type PoS --deployment 2000 --from 200
+dogechain ibft switch --chain ./genesis.json --type PoS --deployment 2000 --from 200
 ````
 
 To switch to PoS, you will need to specify 2 block heights: `deployment` and `from`. `deployment` is the height to deploy the ValidatorSet contract and `from` is the height of beginning of PoS. The ValidatorSet contract will be deployed at the address `0x0000000000000000000000000000000000001001`  at the `deployment`, like as the case of pre-deployed contract.

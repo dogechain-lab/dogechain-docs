@@ -2,14 +2,14 @@ require('dotenv').config()
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-    title: 'Jury',
-    url: 'https://jury-docs.dogecoin.community',
+    title: 'Dogechain',
+    url: 'https://docs.dogechain.dog',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
-    favicon: 'img/favicon-32x32.png',
+    favicon: 'img/logo.png',
     organizationName: 'dogechain-lab',
-    projectName: 'jury-docs',
+    projectName: 'dogechain-docs',
     themes: ['docusaurus-theme-search-typesense'],
     themeConfig: {
         colorMode: {
@@ -20,10 +20,10 @@ module.exports = {
         },
         navbar: {
             hideOnScroll: true,
-            title: 'Jury',
+            title: 'Dogechain',
             logo: {
-                alt: 'Jury Logo',
-                src: 'img/logo.svg',
+                alt: 'Dogechain Logo',
+                src: 'img/logo.png',
                 href: 'docs/overview'
             },
             items: [
@@ -34,7 +34,7 @@ module.exports = {
                     position: 'left'
                 },
                 {
-                    href: 'https://github.com/dogechain-lab/jury',
+                    href: 'https://github.com/dogechain-lab/dogechain',
                     position: 'right',
                     className: 'header-github-link',
                     'aria-label': 'GitHub repository',
@@ -46,7 +46,7 @@ module.exports = {
             copyright: `Made with ❤ by the humans at <a href='https://trapesys.io'>Trapesys</a>`
         },
         typesense: {
-            typesenseCollectionName: 'jury-docs.dogecoin.community', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+            typesenseCollectionName: 'docs.dogechain.dog', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
             typesenseServerConfig: {
                 nodes: [
                     {

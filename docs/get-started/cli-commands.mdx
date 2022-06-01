@@ -6,7 +6,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-This section details the present commands, command flags in the Jury, and how they're used.
+This section details the present commands, command flags in the dogechain, and how they're used.
 
 :::tip JSON output support
 
@@ -58,7 +58,7 @@ Sets the flag indicating that the client should seal blocks. Default: `true`.
   </TabItem>
 </Tabs>
 
-Used to specify the data directory used for storing Jury client data. Default: `./test-chain`.
+Used to specify the data directory used for storing dogechain client data. Default: `./test-chain`.
 
 ---
 
@@ -508,7 +508,7 @@ Set block production time in seconds. Default: `2`
   </TabItem>
   <TabItem value="example" label="Example">
 
-    server --access-control-allow-origins "https://jury-docs.doge.technology"
+    server --access-control-allow-origins "https://dogechain-docs.doge.technology"
 
   </TabItem>
 </Tabs>
@@ -678,7 +678,7 @@ Sets maximum slots in the pool. Default: `4096`.
   </TabItem>
 </Tabs>
 
-Sets the directory for the Jury genesis data. Default: `./genesis.json`.
+Sets the directory for the dogechain genesis data. Default: `./genesis.json`.
 
 ---
 
@@ -697,7 +697,7 @@ Sets the directory for the Jury genesis data. Default: `./genesis.json`.
   </TabItem>
 </Tabs>
 
-Sets the name for the chain. Default: `jury`.
+Sets the name for the chain. Default: `dogechain`.
 
 ---
 
@@ -1391,7 +1391,7 @@ Address of the gRPC API. Default: `127.0.0.1:9632`.
 | **Command** | **Description**                                                                                                                                      |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
 | secrets init      | Initializes the private keys to the corresponding secrets manager                                                         |
-| secrets generate         | Generates a secrets manager configuration file which can be parsed by the Jury    |
+| secrets generate         | Generates a secrets manager configuration file which can be parsed by the dogechain    |
 
 ### secrets init flags
 
@@ -1429,7 +1429,7 @@ Sets the path to the SecretsManager config file. Used for Hashicorp Vault. If om
   </TabItem>
 </Tabs>
 
-Sets the directory for the Jury data if the local FS is used.
+Sets the directory for the dogechain data if the local FS is used.
 
 ### secrets generate flags
 
@@ -1524,7 +1524,7 @@ Specifies the server URL for the service
   </TabItem>
 </Tabs>
 
-Specifies the name of the node for on-service record keeping. Default: `jury-node`
+Specifies the name of the node for on-service record keeping. Default: `dogechain-node`
 
 ---
 
