@@ -495,7 +495,7 @@ Restore blocks from the specified archive file
   </TabItem>
 </Tabs>
 
-Set block production time in seconds. Default: `2`
+Sets block production time in seconds. Default: `2`
 
 ---
 
@@ -862,6 +862,81 @@ Sets consensus protocol. Default: `pow`.
 Multiaddr URL for p2p discovery bootstrap. This flag can be used multiple times.
 Instead of an IP address, the DNS address of the bootnode can be provided.
 
+---
+
+<h4><i>bridge-owner</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    genesis [--bridge-owner BRIDGE_CONTRACT_OWNER]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    genesis --bridge-owner 0xeeA13dF426dcF62999B9bFf912f58E25f4f9Ba2f
+
+  </TabItem>
+</Tabs>
+
+Sets the system bridge contract owner address.
+
+---
+
+<h4><i>bridge-signer</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    genesis [--bridge-signer SIGNER_ACCOUNT_LIST]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    genesis --bridge-signer 0xa39b6aA2CD5139bA742f9D9cd4a72458D78d5c4E --bridge-signer 0x1b4297618913C492179C308322Aa6e66daF625D4
+
+  </TabItem>
+</Tabs>
+
+Sets the system bridge contract signer address. This flag can be used multiple times.
+
+---
+
+<h4><i>validatorset-owner</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    genesis [--validatorset-owner VALIDATOR_CONTRACT_OWNER]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    genesis --validatorset-owner 0xeeA13dF426dcF62999B9bFf912f58E25f4f9Ba2f
+
+  </TabItem>
+</Tabs>
+
+Sets the system ValidatorSet contract owner address.
+
+---
+
+<h4><i>vault-owner</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    genesis [--vault-owner VAULT_CONTRACT_OWNER]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    genesis --vault-owner 0xeeA13dF426dcF62999B9bFf912f58E25f4f9Ba2f
+
+  </TabItem>
+</Tabs>
+
+Sets the system vault contract owner address.
 
 ---
 
