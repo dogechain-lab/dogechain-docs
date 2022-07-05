@@ -519,6 +519,136 @@ If omitted Access-Control-Allow-Origins header will be set to `*` and all domain
 
 ---
 
+<h4><i>daemon</i></h4>
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--daemon SHOULD_RUN_AS_DAEMON]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --daemon
+
+  </TabItem>
+</Tabs>
+
+Sets the flag indicating that the server ran as daemon. Default: `false`.
+Once the flag set, node would not use local secret files, but accept the private keys on the first start up.
+
+---
+
+<h4><i>log-to</i></h4>
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--log-to LOG_FILE_PATH]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --log-to ./dogechain-testing.log
+
+  </TabItem>
+</Tabs>
+
+Sets the flag to write all logs to the file at specified location instead of writing them to console.
+If omitted, logs would be written to console.
+
+---
+
+<h4><i>max-account-demotions</i></h4>
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--max-account-demotions MAX_DEMOTIONS]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --max-account-demotions 5
+
+  </TabItem>
+</Tabs>
+
+Sets the flag for maximum account demontion counter limit in the pool. Default: `10`.
+
+---
+
+<h4><i>enable-graphql</i></h4>
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--enable-graphql SHOULD_ENABLE_GRAPHQL]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --enable-graphql
+
+  </TabItem>
+</Tabs>
+
+Sets the flag indicating that node enable graphql service. Default: `false`.
+
+---
+
+<h4><i>graphql-address</i></h4>
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--graphql-address GRAPHQL_ADDRESS]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --graphql-address :13579
+
+  </TabItem>
+</Tabs>
+
+The GraphQL interface. Default: `127.0.0.1:9898`.
+
+---
+
+<h4><i>promote-outdate-seconds</i></h4>
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--promote-outdate-seconds PROMOTE_OUTDATE_SECONDS]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --promote-outdate-seconds 3600
+
+  </TabItem>
+</Tabs>
+
+Account in the pool not promoted for a long time would be pruned. Default: `1800`.
+
+---
+
+<h4><i>prune-tick-seconds</i></h4>
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--prune-tick-seconds PROMOTE_OUTDATE_SECONDS]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --prune-tick-seconds 600
+
+  </TabItem>
+</Tabs>
+
+Tick seconds for pruning account future transactions in the pool. Default: `300`.
+Should not be larger than `promote-outdate-seconds` flag, otherwise, unknown errors 
+might happen.
+
+---
+
 ### genesis flags
 
 <h4><i>dir</i></h4>
