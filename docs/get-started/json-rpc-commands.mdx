@@ -196,8 +196,10 @@ Returns block information by hash.
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getBlockByHash","params":["0xdc0818cf78f21a8e70579cb46a43643f78291264dda342ae31049421c82d21ae",false],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getBlockByHash","params":["0xaafe4e5f40deffde428b353da73740a9666816d5e8db58a2684e548e79a929e0",false],"id":1}'
 ````
+
+<JsonRpcTerminal method="eth_getBlockByHash" params={["0xaafe4e5f40deffde428b353da73740a9666816d5e8db58a2684e548e79a929e0",false]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_blockNumber
 
@@ -269,6 +271,8 @@ Returns the balance of the account of the given address.
 ````bash
 curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getBalance","params":["0x407d73d8a49eeb85d32cf465507dd71d507100c1", "latest"],"id":1}'
 ````
+
+<JsonRpcTerminal method="eth_getBalance" params={["0x407d73d8a49eeb85d32cf465507dd71d507100c1","latest"]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_sendRawTransaction
 
@@ -349,8 +353,10 @@ Returns the information about a transaction requested by transaction hash.
 
 
 ````bash
-curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","params":["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getTransactionByHash","params":["0xf00d6907863242bb3c305babb2abdc34ea2b57e2a5b2b2808ce9bd4777c74f98"],"id":1}'
 ````
+
+<JsonRpcTerminal method="eth_getTransactionByHash" params={["0xf00d6907863242bb3c305babb2abdc34ea2b57e2a5b2b2808ce9bd4777c74f98"]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_getTransactionReceipt
 
@@ -387,8 +393,10 @@ It also returns either :
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getTransactionReceipt","params":["0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getTransactionReceipt","params":["0xf00d6907863242bb3c305babb2abdc34ea2b57e2a5b2b2808ce9bd4777c74f98"],"id":1}'
 ````
+
+<JsonRpcTerminal method="eth_getTransactionByHash" params={["0xf00d6907863242bb3c305babb2abdc34ea2b57e2a5b2b2808ce9bd4777c74f98"]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_getTransactionCount
 
@@ -408,8 +416,10 @@ Returns the number of transactions sent from an address.
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getTransactionCount","params":["0x407d73d8a49eeb85d32cf465507dd71d507100c1","latest"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getTransactionCount","params":["0xd33ca668f3ff45b6a629a7db19fc6318c47370e8","latest"],"id":1}'
 ````
+
+<JsonRpcTerminal method="eth_getTransactionCount" params={["0xd33ca668f3ff45b6a629a7db19fc6318c47370e8","latest"]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_getBlockTransactionCountByNumber
 
@@ -431,9 +441,9 @@ Run the command and see live results from our testnet.
 
 ````bash
 curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getBlockTransactionCountByNumber","params":["latest"],"id":1}'
-````
+```
 
-<JsonRpcTerminal method="eth_getBlockTransactionCountByNumber" params={[]} network="https://rpc-testnet.dogechain.dog"/>
+<JsonRpcTerminal method="eth_getBlockTransactionCountByNumber" params={["latest"]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_getFilterLogs
 
@@ -464,8 +474,10 @@ Returns an array of all logs matching a subscribed filter.
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getFilterLogs","params":["0x16"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getFilterLogs","params":["d525a0e5-89a1-4e6f-b2cd-a668fd251828"],"id":1}'
 ````
+
+<JsonRpcTerminal method="eth_getFilterLogs" params={["d525a0e5-89a1-4e6f-b2cd-a668fd251828"]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_getLogs
 
@@ -488,10 +500,11 @@ Returns an array of all logs matching a given filter object.
 
 <h4><i>Example:</i></h4>
 
-````bash
-curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getLogs","params":[{"topics": ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]}],"id":1}'
-````
+```bash
+curl  http://127.0.0.1:15002 -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getLogs","params":[{"fromBlock":"0x186A0","toBlock":"0x18894","address":"0x0000000000000000000000000000000000001001"}],"id":1}'
+```
 
+<JsonRpcTerminal method="eth_getLogs" params={[{"fromBlock":"0x186A0","toBlock":"0x18894","address":"0x0000000000000000000000000000000000001001"}]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_getCode
 
@@ -511,8 +524,10 @@ Returns code at a given address.
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getCode","params":["0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x2"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getCode","params":["0x0000000000000000000000000000000000001001", "latest"],"id":1}'
 ````
+
+<JsonRpcTerminal method="eth_getCode" params={["0x0000000000000000000000000000000000001001", "latest"]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_call
 
@@ -560,8 +575,10 @@ Returns the value from a storage position at a given address.
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getStorageAt","params":["0x295a70b2de5e3953354a6a8344e616ed314d7251", "0x0", "latest"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getStorageAt","params":["0x0000000000000000000000000000000000001001", "0x0000000000000000000000000000000000000000000000000000000000000000", "latest"],"id":1}'
 ````
+
+<JsonRpcTerminal method="eth_getStorageAt" params={["0x0000000000000000000000000000000000001001", "0x0000000000000000000000000000000000000000000000000000000000000000", "latest"]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_estimateGas
 
@@ -615,8 +632,10 @@ To check if the state has changed, call eth_getFilterChanges.
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_newFilter","params":[{"topics":["0x12341234"]}],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_newFilter","params":[{"address":"0x0000000000000000000000000000000000001001"}],"id":1}'
 ````
+
+<JsonRpcTerminal method="eth_newFilter" params={[{"address":"0x0000000000000000000000000000000000001001"}]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_newBlockFilter
 
@@ -672,8 +691,10 @@ Polling method for a filter, which returns an array of logs that occurred since 
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getFilterChanges","params":["0x16"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getFilterChanges","params":["bc3ae051-e2cc-4a33-a7be-d5919d576d3e"],"id":1}'
 ````
+
+<JsonRpcTerminal method="eth_getFilterChanges" params={["bc3ae051-e2cc-4a33-a7be-d5919d576d3e"]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_uninstallFilter
 
@@ -693,8 +714,10 @@ Additionally, filters timeout when they aren’t requested with eth_getFilterCha
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_uninstallFilter","params":["0xb"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_uninstallFilter","params":["d525a0e5-89a1-4e6f-b2cd-a668fd251828"],"id":1}'
 ````
+
+<JsonRpcTerminal method="eth_uninstallFilter" params={["d525a0e5-89a1-4e6f-b2cd-a668fd251828"]} network="https://rpc-testnet.dogechain.dog"/>
 
 ### eth_unsubscribe
 
@@ -713,8 +736,10 @@ Subscriptions are cancelled with a regular RPC call with eth_unsubscribe as a me
 <h4><i>Example:</i></h4>
 
 ````bash
-curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_unsubscribe","params":["0x9cef478923ff08bf67fde6c64013158d"],"id":1}'
+curl  https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_unsubscribe","params":["0xf0c4373093c02339baa4ea01a6ad4b2a8d942a87"],"id":1}'
 ````
+
+<JsonRpcTerminal method="eth_unsubscribe" params={["0xf0c4373093c02339baa4ea01a6ad4b2a8d942a87"]} network="https://rpc-testnet.dogechain.dog"/>
 
 ## net
 
