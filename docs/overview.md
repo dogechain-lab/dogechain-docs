@@ -4,12 +4,21 @@ title: Dogechain
 sidebar_label: Overview
 ---
 
-## Dogechain testnet
-The Dogechain testnet is now live! Mainnet will launch soon, but in the meantime developers can begin building on the testnet now.
+## Testnet
 * Explorer: https://explorer-testnet.dogechain.dog
-* Chain ID:  568
-* Json RPC:  https://rpc-testnet.dogechain.dog
+* ChainID:  568
 * Faucet:  https://faucet.dogechain.dog
+* RPC Endpoints:
+    * https://rpc-testnet.dogechain.dog
+
+## Mainnet
+* Explorer: https://explorer.dogechain.dog
+* ChainID: 2000
+* Bridge: https://bridge.dogechain.dog
+* RPC Endpoints:
+    * https://rpc01-sg.dogechain.dog
+    * https://rpc02-sg.dogechain.dog
+    * https://rpc03-sg.dogechain.dog
 
 Dogechain is built on Polygon Edge, which lets the project bootstrap a new blockchain network while providing full compatibility with Ethereum smart contracts and transactions. It uses IBFT (Istanbul Byzantine Fault Tolerant) consensus mechanism, supported [PoS (proof of stake)](/docs/consensus/pos-stake-unstake).
 
