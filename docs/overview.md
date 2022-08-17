@@ -16,6 +16,9 @@ sidebar_label: Overview
 * ChainID: 2000
 * Bridge: https://bridge.dogechain.dog
 * RPC Endpoints:
+    * https://rpc-sg.dogechain.dog
+    * https://rpc-us.dogechain.dog
+    * https://rpc.dogechain.dog
     * https://rpc01-sg.dogechain.dog
     * https://rpc02-sg.dogechain.dog
     * https://rpc03-sg.dogechain.dog
