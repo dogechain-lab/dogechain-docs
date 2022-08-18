@@ -19,6 +19,7 @@ sidebar_label: Overview
     * https://rpc-sg.dogechain.dog
     * https://rpc-us.dogechain.dog
     * https://rpc.dogechain.dog
+    * https://doge.ankr.com
     * https://rpc01-sg.dogechain.dog
     * https://rpc02-sg.dogechain.dog
     * https://rpc03-sg.dogechain.dog
