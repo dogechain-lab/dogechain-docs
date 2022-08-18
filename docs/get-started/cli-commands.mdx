@@ -495,7 +495,7 @@ Restore blocks from the specified archive file
   </TabItem>
 </Tabs>
 
-Set block production time in seconds. Default: `2`
+Sets block production time in seconds. Default: `2`
 
 ---
 
@@ -519,147 +519,135 @@ If omitted Access-Control-Allow-Origins header will be set to `*` and all domain
 
 ---
 
-### dev flags
-
-<h4><i>log-level</i></h4>
-
+<h4><i>daemon</i></h4>
 <Tabs>
   <TabItem value="syntax" label="Syntax" default>
 
-    dev [--log-level LOG_LEVEL]
+    server [--daemon SHOULD_RUN_AS_DAEMON]
 
   </TabItem>
   <TabItem value="example" label="Example">
 
-    dev --log-level DEBUG
+    server --daemon
 
   </TabItem>
 </Tabs>
 
-Sets the log level for console output.     
-Available options: `TRACE, DEBUG, INFO, WARN, ERROR, OFF`.        
-Default: `INFO`.
+Sets the flag indicating that the server ran as daemon. Default: `false`.
+Once the flag set, node would not use local secret files, but accept the private keys on the first start up.
 
 ---
 
-<h4><i>premine</i></h4>
-
+<h4><i>log-to</i></h4>
 <Tabs>
   <TabItem value="syntax" label="Syntax" default>
 
-    dev [--premine ADDRESS:VALUE]
+    server [--log-to LOG_FILE_PATH]
 
   </TabItem>
   <TabItem value="example" label="Example">
 
-    dev --premine 0x3956E90e632AEbBF34DEB49b71c28A83Bc029862:1000000000000000000000
+    server --log-to ./dogechain-testing.log
 
   </TabItem>
 </Tabs>
 
-Sets the premined accounts and balances in the format `address:amount` in WEI.     
-The amount can be in either decimal or hex.     
-Default premined balance: `0x3635C9ADC5DEA00000`.
+Sets the flag to write all logs to the file at specified location instead of writing them to console.
+If omitted, logs would be written to console.
 
 ---
 
-<h4><i>dev-interval</i></h4>
-
+<h4><i>max-account-demotions</i></h4>
 <Tabs>
   <TabItem value="syntax" label="Syntax" default>
 
-    dev [--dev-interval DEV_INTERVAL]
+    server [--max-account-demotions MAX_DEMOTIONS]
 
   </TabItem>
   <TabItem value="example" label="Example">
 
-    dev --dev-interval 20
+    server --max-account-demotions 5
 
   </TabItem>
 </Tabs>
 
-Sets the client's dev notification interval in seconds. Default: `0`.
+Sets the flag for maximum account demontion counter limit in the pool. Default: `10`.
 
 ---
 
-<h4><i>block-gas-limit</i></h4>
-
+<h4><i>enable-graphql</i></h4>
 <Tabs>
   <TabItem value="syntax" label="Syntax" default>
 
-    dev [--block-gas-limit BLOCK_GAS_LIMIT]
+    server [--enable-graphql SHOULD_ENABLE_GRAPHQL]
 
   </TabItem>
   <TabItem value="example" label="Example">
 
-    dev --block-gas-limit 10000
+    server --enable-graphql
 
   </TabItem>
 </Tabs>
 
-Sets the gas limit of each block. Default: `5000`.
+Sets the flag indicating that node enable graphql service. Default: `false`.
 
 ---
 
-<h4><i>chainid</i></h4>
-
+<h4><i>graphql-address</i></h4>
 <Tabs>
   <TabItem value="syntax" label="Syntax" default>
 
-    dev [--chainid CHAIN_ID]
+    server [--graphql-address GRAPHQL_ADDRESS]
 
   </TabItem>
   <TabItem value="example" label="Example">
 
-    dev --chainid 200
+    server --graphql-address :13579
 
   </TabItem>
 </Tabs>
 
-Sets the ID of the chain. Default: `2000`.
+The GraphQL interface. Default: `127.0.0.1:9898`.
 
 ---
 
-<h4>
-  <i>price-limit</i>
-</h4>
-
+<h4><i>promote-outdate-seconds</i></h4>
 <Tabs>
   <TabItem value="syntax" label="Syntax" default>
 
-    dev [--price-limit PRICE_LIMIT]
+    server [--promote-outdate-seconds PROMOTE_OUTDATE_SECONDS]
 
   </TabItem>
   <TabItem value="example" label="Example">
 
-    dev --price-limit 10000
+    server --promote-outdate-seconds 3600
 
   </TabItem>
 </Tabs>
 
-Sets minimum gas price limit to enforce for acceptance into the pool. Default: `1`.
+Account in the pool not promoted for a long time would be pruned. Default: `1800`.
 
 ---
 
-<h4>
-  <i>max-slots</i>
-</h4>
-
+<h4><i>prune-tick-seconds</i></h4>
 <Tabs>
   <TabItem value="syntax" label="Syntax" default>
 
-    dev [--max-slots MAX_SLOTS]
+    server [--prune-tick-seconds PROMOTE_OUTDATE_SECONDS]
 
   </TabItem>
   <TabItem value="example" label="Example">
 
-    dev --max-slots 1024
+    server --prune-tick-seconds 600
 
   </TabItem>
 </Tabs>
 
-Sets maximum slots in the pool. Default: `4096`.
+Tick seconds for pruning account future transactions in the pool. Default: `300`.
+Should not be larger than `promote-outdate-seconds` flag, otherwise, unknown errors 
+might happen.
 
+---
 
 ### genesis flags
 
@@ -761,7 +749,7 @@ Default premined balance: `0x3635C9ADC5DEA00000`.
 
 ---
 
-<h4><i>chainid</i></h4>
+<h4><i>chain-id</i></h4>
 
 <Tabs>
   <TabItem value="syntax" label="Syntax" default>
@@ -874,18 +862,93 @@ Sets consensus protocol. Default: `pow`.
 Multiaddr URL for p2p discovery bootstrap. This flag can be used multiple times.
 Instead of an IP address, the DNS address of the bootnode can be provided.
 
+---
+
+<h4><i>bridge-owner</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    genesis [--bridge-owner BRIDGE_CONTRACT_OWNER]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    genesis --bridge-owner 0xeeA13dF426dcF62999B9bFf912f58E25f4f9Ba2f
+
+  </TabItem>
+</Tabs>
+
+Sets the system bridge contract owner address.
+
+---
+
+<h4><i>bridge-signer</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    genesis [--bridge-signer SIGNER_ACCOUNT_LIST]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    genesis --bridge-signer 0xa39b6aA2CD5139bA742f9D9cd4a72458D78d5c4E --bridge-signer 0x1b4297618913C492179C308322Aa6e66daF625D4
+
+  </TabItem>
+</Tabs>
+
+Sets the system bridge contract signer address. This flag can be used multiple times.
+
+---
+
+<h4><i>validatorset-owner</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    genesis [--validatorset-owner VALIDATOR_CONTRACT_OWNER]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    genesis --validatorset-owner 0xeeA13dF426dcF62999B9bFf912f58E25f4f9Ba2f
+
+  </TabItem>
+</Tabs>
+
+Sets the system ValidatorSet contract owner address.
+
+---
+
+<h4><i>vault-owner</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    genesis [--vault-owner VAULT_CONTRACT_OWNER]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    genesis --vault-owner 0xeeA13dF426dcF62999B9bFf912f58E25f4f9Ba2f
+
+  </TabItem>
+</Tabs>
+
+Sets the system vault contract owner address.
 
 ---
 
 ## Operator Commands
 
-### Peer Commands
+### Peers Commands
 
 | **Command**            | **Description**                                                                     |
 |------------------------|-------------------------------------------------------------------------------------|
-| peers add   | Adds a new peer using their libp2p address                                  |
-| peers list             | Lists all the peers the client is connected to through libp2p                      |
-| peers status | Returns the status of a specific peer from the peers list, using the libp2p address 
+| peers add              | Adds a new peer using their libp2p address |
+| peers list             | Lists all the peers the client is connected to through libp2p |
+| peers status           | Returns the status of a specific peer from the peers list, using the libp2p address |
 
 <h3>peers add flags</h3>
 
