@@ -34,9 +34,9 @@ module.exports = {
                     position: 'left'
                 },
                 {
-                    to: 'docs/governance/overview',
+                    to: 'docs/tokenomics/overview',
                     activeBasePath: 'docs/',
-                    label: 'Governance',
+                    label: 'Tokenomics',
                     position: 'left'
                 },
                 {
