@@ -1,5 +1,5 @@
 ---
-id: overview
+id: overview 
 title: Dogechain
 sidebar_label: Overview
 ---
@@ -16,7 +16,6 @@ sidebar_label: Overview
 * ChainID: 2000
 * Bridge: https://bridge.dogechain.dog
 * RPC Endpoints:
-    * https://rpc01.dogechain.dog
     * https://rpc-sg.dogechain.dog
     * https://rpc-us.dogechain.dog
     * https://rpc.dogechain.dog
@@ -25,6 +24,7 @@ sidebar_label: Overview
     * https://rpc03-sg.dogechain.dog
 * Ankr RPC Endpoints:
     * https://dogechain.ankr.com
+    * https://dogechain-sj.ankr.com
 
 Dogechain is built on Polygon Edge, which lets the project bootstrap a new blockchain network while providing full compatibility with Ethereum smart contracts and transactions. It uses IBFT (Istanbul Byzantine Fault Tolerant) consensus mechanism, supported [PoS (proof of stake)](/docs/consensus/pos-stake-unstake).
 

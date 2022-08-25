@@ -30,7 +30,13 @@ module.exports = {
                 {
                     to: 'docs/overview',
                     activeBasePath: 'docs/',
-                    label: 'Docs',
+                    label: 'Developers',
+                    position: 'left'
+                },
+                {
+                    to: 'docs/tokenomics/overview',
+                    activeBasePath: 'docs/',
+                    label: 'Tokenomics',
                     position: 'left'
                 },
                 {
