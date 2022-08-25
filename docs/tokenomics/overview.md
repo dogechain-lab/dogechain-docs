@@ -20,7 +20,7 @@ sidebar_label: Overview
 | :-------------------------------: | :---------: | :----------------: | :----------------------------------------: |
 | Ecosystem DAO Fund        | `29.00%`    | `$veDC` Governance                                   | `0x64C53d47d879Eb3D1A311C7110a3964909A60bEc` |
 | Network Operations        | `15.00%`      | Linear vesting in *4 years*                          | `0x6C13d0978d4D1eB1208C93ad630c79d1728495C3` |
-| Airdrop                   | `12.00%`      | `3%` for Early Shibes Airdrop + `9%` for Loyal Airdrop | `0x5a3C2E0A005883c598430f1Ab303411dB1E0bA3A` |
+| Airdrop                   | `12.00%`      | `3%` for Early Shibes Airdrop + `9%` for Loyal Airdrop | Early Shibes: `0x5a3C2E0A005883c598430f1Ab303411dB1E0bA3A`<br />Loyal Shibes: `0xBce77b0d91e98E4524E74Fd378A3af5c9B94528e` |
 | Foundation                | `12.00%`      | `15%` upfront *2-year* linear vesting                  | `0x07Be55dcbEa6ac1BB0A8d89C88485F483E0Add80` |
 | Treasury                  | `10.00%`      | `15%` upfront *2-year* linear vesting                  | `0x85217A346f3fa64893bAB3caeEa59eFfD0Df8BC9` |
 | Contributing Team Members | `10.00%`      | *5-year* linear vesting                              | `0xc1eFE7Aa280f7c63A4B1DA26aE0F7e64ce7F2A8A` |
