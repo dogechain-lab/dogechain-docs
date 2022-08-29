@@ -39,6 +39,9 @@ jobs:
       - name: Install dependency
         run: yarn
       
+      - name: Browserslist update
+        run: npx browserslist@4.17.3 --update-db
+      
       - name: Build static webpages
         run: yarn build
       
