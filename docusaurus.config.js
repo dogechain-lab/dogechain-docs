@@ -4,7 +4,7 @@ require('dotenv').config()
 module.exports = {
     title: 'Dogechain',
     url: 'https://docs.dogechain.dog',
-    baseUrl: '/',
+    baseUrl: '/dogechain-docs/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/logo.png',
