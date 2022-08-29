@@ -61,7 +61,7 @@ module.exports = {
                         protocol: 'https',
                     },
                 ],
-                apiKey: process.env.TYPESENSE_API_KEY,
+                apiKey: process.env.TYPESENSE_API_KEY || '',
             },
         },
     },
