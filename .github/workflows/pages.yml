@@ -48,6 +48,7 @@ jobs:
           TYPESENSE_HOST: ${{ secrets.TYPESENSE_HOST }}
           TYPESENSE_HTTP_PROTOCOL: ${{ secrets.TYPESENSE_HTTP_PROTOCOL }}
           TYPESENSE_HTTP_PORT: ${{ secrets.TYPESENSE_HTTP_PORT }}
+          TYPESENSE_API_KEY: ${{ secrets.TYPESENSE_API_KEY }}
         run: yarn build
       
       - name: Set AWS credentials
