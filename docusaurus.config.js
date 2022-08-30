@@ -10,7 +10,15 @@ module.exports = {
     favicon: 'img/logo.png',
     organizationName: 'dogechain-lab',
     projectName: 'dogechain-docs',
-    themes: ['docusaurus-theme-search-typesense'],
+    themes: [
+        [
+          require.resolve("@easyops-cn/docusaurus-search-local"),
+          {
+            hashed: true,
+            language: ["en"],
+          },
+        ],
+    ],
     themeConfig: {
         colorMode: {
             defaultMode: 'dark'
@@ -50,21 +58,7 @@ module.exports = {
         footer: {
             style: 'dark',
             copyright: `Made with ❤ by the humans at <a href='https://trapesys.io'>Trapesys</a>`
-        },
-        typesense: {
-            typesenseCollectionName: process.env.TYPESENSE_COLLECTION_NAME || 'localhost',
-            typesenseServerConfig: {
-                nodes: [
-                    {
-                        host: process.env.TYPESENSE_HOST || 'localhost',
-                        port: process.env.TYPESENSE_HTTP_PORT ||
-                              process.env.TYPESENSE_HTTP_PROTOCOL == 'https' ? 443 : 80,
-                        protocol: process.env.TYPESENSE_HTTP_PROTOCOL || 'http',
-                    },
-                ],
-                apiKey: process.env.TYPESENSE_API_KEY || '',
-            },
-        },
+        }
     },
     presets: [
         [
