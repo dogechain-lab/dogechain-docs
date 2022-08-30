@@ -52,13 +52,14 @@ module.exports = {
             copyright: `Made with ❤ by the humans at <a href='https://trapesys.io'>Trapesys</a>`
         },
         typesense: {
-            typesenseCollectionName: 'docs.dogechain.dog', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+            typesenseCollectionName: process.env.TYPESENSE_COLLECTION_NAME || 'localhost',
             typesenseServerConfig: {
                 nodes: [
                     {
-                        host: 'fvtlbamhupdcon8rp-1.a1.typesense.net',
-                        port: 443,
-                        protocol: 'https',
+                        host: process.env.TYPESENSE_HOST || 'localhost',
+                        port: process.env.TYPESENSE_HTTP_PORT ||
+                              process.env.TYPESENSE_HTTP_PROTOCOL == 'https' ? 443 : 80,
+                        protocol: process.env.TYPESENSE_HTTP_PROTOCOL || 'http',
                     },
                 ],
                 apiKey: process.env.TYPESENSE_API_KEY || '',
