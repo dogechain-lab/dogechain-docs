@@ -6,6 +6,12 @@ on:
     branches: 
       - "main"
 
+  pull_request:
+    branches:
+      - "main"
+    types:
+      - "closed"
+
 permissions:
   contents: read
   pages: write
@@ -20,6 +26,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    if: github.event.pull_request.merged == true || github.event_name == 'push'
     runs-on: ubuntu-latest
     strategy:
       matrix:
