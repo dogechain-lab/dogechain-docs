@@ -141,7 +141,8 @@ $ chown -R dogechain:dogechain /etc/dogechain
             "istanbul": 0,
             "EIP150": 0,
             "EIP158": 0,
-            "EIP155": 0
+            "EIP155": 0,
+            "portland": 1981991
         },
         "chainID": 2000,
         "engine": {
@@ -197,7 +198,9 @@ ExecStart=/usr/local/bin/dogechain server \
     --libp2p 0.0.0.0:1478 \
     --jsonrpc 0.0.0.0:8545 \
     --enable-graphql \
-    --graphql-address 0.0.0.0:9898
+    --graphql-address 0.0.0.0:9898 \
+    --max-inbound-peers 128 \
+    --max-outbound-peers 16
 
 EOF
 

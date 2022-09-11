@@ -10,7 +10,15 @@ module.exports = {
     favicon: 'img/logo.png',
     organizationName: 'dogechain-lab',
     projectName: 'dogechain-docs',
-    themes: ['docusaurus-theme-search-typesense'],
+    themes: [
+        [
+          require.resolve("@easyops-cn/docusaurus-search-local"),
+          {
+            hashed: true,
+            language: ["en"],
+          },
+        ],
+    ],
     themeConfig: {
         colorMode: {
             defaultMode: 'dark'
@@ -34,9 +42,9 @@ module.exports = {
                     position: 'left'
                 },
                 {
-                    to: 'docs/governance/overview',
+                    to: 'docs/tokenomics/overview',
                     activeBasePath: 'docs/',
-                    label: 'Governance',
+                    label: 'Tokenomics',
                     position: 'left'
                 },
                 {
@@ -50,20 +58,7 @@ module.exports = {
         footer: {
             style: 'dark',
             copyright: `Made with ❤ by the humans at <a href='https://trapesys.io'>Trapesys</a>`
-        },
-        typesense: {
-            typesenseCollectionName: 'docs.dogechain.dog', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
-            typesenseServerConfig: {
-                nodes: [
-                    {
-                        host: 'fvtlbamhupdcon8rp-1.a1.typesense.net',
-                        port: 443,
-                        protocol: 'https',
-                    },
-                ],
-                apiKey: process.env.TYPESENSE_API_KEY,
-            },
-        },
+        }
     },
     presets: [
         [
