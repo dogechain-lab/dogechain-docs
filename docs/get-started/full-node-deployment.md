@@ -42,7 +42,7 @@ $ curl -OL https://github.com/dogechain-lab/dogechain/releases/download/v${DOGEC
 ## copy binary to /usr/local/bin
 
 ```shell
-$ tar -xvf dogechain_1.0.2_linux_amd64.tar.gz
+$ tar -xvf dogechain_${DOGECHAIN_VERSION}_linux_amd64.tar.gz
 $ cp dogechain /usr/local/bin/dogechain
 $ chmod +x /usr/local/bin/dogechain
 ```
