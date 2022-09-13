@@ -28,19 +28,21 @@ Full node deployment of the Dogechain blockchain.
 * wget:
 
 ```shell
-$ wget -c https://github.com/dogechain-lab/dogechain/releases/download/v1.0.2/dogechain_1.0.2_linux_amd64.tar.gz
+$ DOGECHAIN_VERSION=$(wget -qO- https://api.github.com/repos/dogechain-lab/dogechain/releases/latest | grep tag_name | cut -d '"' -f 4 | cut -d 'v' -f 2)
+$ wget -c https://github.com/dogechain-lab/dogechain/releases/download/v${DOGECHAIN_VERSION}/dogechain_${DOGECHAIN_VERSION}_linux_amd64.tar.gz
 ```
 
 * curl:
 
 ```shell
-$ curl -OL https://github.com/dogechain-lab/dogechain/releases/download/v1.0.2/dogechain_1.0.2_linux_amd64.tar.gz
+$ DOGECHAIN_VERSION=$(curl -s https://api.github.com/repos/dogechain-lab/dogechain/releases/latest | grep tag_name | cut -d '"' -f 4 | cut -d 'v' -f 2)
+$ curl -OL https://github.com/dogechain-lab/dogechain/releases/download/v${DOGECHAIN_VERSION}/dogechain_${DOGECHAIN_VERSION}_linux_amd64.tar.gz
 ```
 
 ## copy binary to /usr/local/bin
 
 ```shell
-$ tar -xvf dogechain_1.0.2_linux_amd64.tar.gz
+$ tar -xvf dogechain_${DOGECHAIN_VERSION}_linux_amd64.tar.gz
 $ cp dogechain /usr/local/bin/dogechain
 $ chmod +x /usr/local/bin/dogechain
 ```
