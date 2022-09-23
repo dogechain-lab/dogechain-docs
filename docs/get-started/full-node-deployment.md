@@ -190,21 +190,37 @@ KillSignal=SIGINT
 TimeoutStopSec=120
 LimitNOFILE=65535
 LimitNPROC=65535
+PrivateTmp=true
+# MemoryMax setting replaces MemoryLimit in newer systemd versions
+MemoryMax=6G
+MemoryHigh=5G
+# keep MemoryLimit for compatibility with older systemd versions
+MemoryLimit=6G
+
 WorkingDirectory=/var/lib/dogechain
 ExecStart=/usr/local/bin/dogechain server \
-    --data-dir /data/dogechain \
-    --chain /etc/dogechain/genesis.json \
-    --seal \
-    --max-slots 40960 \
-    --grpc  0.0.0.0:9632 \
-    --libp2p 0.0.0.0:1478 \
-    --jsonrpc 0.0.0.0:8545 \
+    --data-dir=/data/dogechain \
+    --chain=/etc/dogechain/genesis.json \
+    --seal=false \
+    --grpc=0.0.0.0:9632 \
+    --libp2p=0.0.0.0:1478 \
+    --jsonrpc=0.0.0.0:8545 \
     --enable-graphql \
-    --graphql-address 0.0.0.0:9898 \
-    --max-inbound-peers 128 \
-    --max-outbound-peers 16
+    --graphql-address=0.0.0.0:9898 \
+    --max-inbound-peers=128 \
+    --max-outbound-peers=16
 
 EOF
+
+```
+
+> You need to append set `--nat` flag of `ExecStart` command if you’re in NAT network or gateway.
+
+```ini
+......
+ExecStart= ......
+    --max-outbound-peers=16 \
+    --nat=XXX.XXX.XXX.XXX:1478
 
 ```
 
