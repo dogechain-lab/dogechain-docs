@@ -214,6 +214,16 @@ EOF
 
 ```
 
+> You need to append set `--nat` flag of `ExecStart` command if you’re in NAT network or gateway.
+
+```ini
+......
+ExecStart= ......
+    --max-outbound-peers=16 \
+    --nat=XXX.XXX.XXX.XXX:1478
+
+```
+
 ### Start service
 
 ```shell
