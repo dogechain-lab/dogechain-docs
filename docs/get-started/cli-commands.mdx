@@ -14,12 +14,15 @@ The `--json` flag is supported on some commands. This flag instructs the command
 
 :::
 
+## Reference Version
+
+**`v1.1.3`**
+
 ## Startup Commands
 
-| **Command** | **Description**                                                                                                                                      |
-|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| server      | The default command that starts the blockchain client, by bootstrapping all modules together                                                         |
-| dev         | "Bypasses" consensus and networking and starts a blockchain locally. It starts a local node and mines every transaction in a separate block    |
+| **Command** | **Description**                                              |
+| ----------- | ------------------------------------------------------------ |
+| server      | The default command that starts the blockchain client, by bootstrapping all modules together |
 | genesis     | Generates a *genesis.json* file, which is used to set a predefined chain state before starting the client. The structure of the genesis file is described below |
 
 ### server flags
@@ -35,11 +38,14 @@ The `--json` flag is supported on some commands. This flag instructs the command
   <TabItem value="example" label="Example">
 
     server --seal
+    server --seal=false
 
   </TabItem>
 </Tabs>
 
-Sets the flag indicating that the client should seal blocks. Default: `true`.
+Sets the flag indicating that the client should seal blocks. Default: `true`. 
+
+Turn it off by explicitly setting it `false`.
 
 ---
 
@@ -58,10 +64,9 @@ Sets the flag indicating that the client should seal blocks. Default: `true`.
   </TabItem>
 </Tabs>
 
-Used to specify the data directory used for storing dogechain client data. Default: `./test-chain`.
+Used to specify the data directory used for storing Dogechain-Lab Dogechain client data. Default: `./dogechain-chain`.
 
 ---
-
 
 <h4><i>jsonrpc</i></h4>
 
@@ -85,6 +90,67 @@ Default address: `0.0.0.0:8545`.
 
 ---
 
+<h4><i>json-rpc-batch-request-limit</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--json-rpc-batch-request-limit BATCH_REQUST_LIMIT]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --json-rpc-batch-request-limit 5
+
+  </TabItem>
+</Tabs>
+
+Sets the max length to be considered when handling json-rpc batch requests. Default `1`.
+
+Turn it off by setting `0`.
+
+---
+
+<h4><i>json-rpc-block-range-limit</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--json-rpc-block-range-limit BLOCK_RANGE_LIMIT]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --json-rpc-block-range-limit 100
+
+  </TabItem>
+</Tabs>
+
+Sets the max block range to be considered when executing json-rpc requests that consider fromBlock/toBlock values. Default `100`.
+
+Turn it off by setting `0`.
+
+---
+
+<h4><i>enable-ws</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--enable-ws SHOULD_ENABLE_WEBSOCKET]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --enable-ws
+
+  </TabItem>
+</Tabs>
+
+Sets the flag indicating that node enable WebSocket service. Default: `false`.
+
+---
+
 <h4><i>grpc</i></h4>
 
 <Tabs>
@@ -95,7 +161,7 @@ Default address: `0.0.0.0:8545`.
   </TabItem>
   <TabItem value="example" label="Example">
 
-    server --grpc-address 127.0.0.1:10001
+    server --grpc-address 127.0.0.1:9632
 
   </TabItem>
 </Tabs>
@@ -114,7 +180,7 @@ Sets the address and port for the gRPC service `address:port`. Default address: 
   </TabItem>
   <TabItem value="example" label="Example">
 
-    server --libp2p 127.0.0.1:10002
+    server --libp2p 127.0.0.1:1478
 
   </TabItem>
 </Tabs>
@@ -159,7 +225,7 @@ If omitted the service will not be started.
   </TabItem>
 </Tabs>
 
-Sets the target block gas limit for the chain. Default (not enforced): `0`.
+Sets the target block gas limit for the chain. If omitted, the value of the parent block is used. Default (not enforced): `0`.
 
 A more detailed explanation on the block gas target can be found in the [TxPool section](/docs/architecture/modules/txpool#block-gas-target).
 
@@ -290,17 +356,18 @@ Specifies the address of the peer that should be joined.
 <Tabs>
   <TabItem value="syntax" label="Syntax" default>
 
-    server [--nat NAT_ADDRESS]
+    server [--nat NAT_ADDRESS[:PORT]]
 
   </TabItem>
   <TabItem value="example" label="Example">
 
     server --nat 192.0.2.1
+    server --nat 192.0.2.1:22222
 
   </TabItem>
 </Tabs>
 
-Sets the external IP address without the port, as it can be seen by peers.
+Sets the external address (address:port), as can be seen by peers.
 
 ---
 
@@ -336,12 +403,12 @@ Sets the host DNS address. This can be used to advertise an external DNS. Suppor
   </TabItem>
   <TabItem value="example" label="Example">
 
-    server --price-limit 10000
+    server --price-limit 250000000000
 
   </TabItem>
 </Tabs>
 
-Sets minimum gas price limit to enforce for acceptance into the pool. Default: `1`.
+Sets minimum gas price limit to enforce for acceptance into the pool. Default: `0`.
 
 ---
 
@@ -357,8 +424,8 @@ Sets minimum gas price limit to enforce for acceptance into the pool. Default: `
   </TabItem>
   <TabItem value="example" label="Example">
 
-    server --max-slots 1024
-    
+    server --max-slots 4096
+
   </TabItem>
 </Tabs>
 
@@ -381,7 +448,7 @@ Sets maximum slots in the pool. Default: `4096`.
   </TabItem>
 </Tabs>
 
-Specifies the path to the CLI config. Supports `.json`.
+Specifies the path to the CLI config. Supports `.json` and `.hcl`.
 
 ---
 
@@ -400,7 +467,7 @@ Specifies the path to the CLI config. Supports `.json`.
   </TabItem>
 </Tabs>
 
-Sets the path to the SecretsManager config file. Used for Hashicorp Vault. If omitted, the local FS secrets manager is used.
+Sets the path to the SecretsManager config file. Used for Hashicorp Vault and GCP SSM. If omitted, the local FS secrets manager is used.
 
 ---
 
@@ -433,7 +500,7 @@ Sets the client to dev mode. Default: `false`.
   </TabItem>
   <TabItem value="example" label="Example">
 
-    server --dev-interval 20
+    server --dev-interval 1
 
   </TabItem>
 </Tabs>
@@ -476,7 +543,7 @@ Prevents the client from discovering other peers. Default: `false`.
   </TabItem>
 </Tabs>
 
-Restore blocks from the specified archive file
+Sets the path to the archive blockchain data to restore on initialization.
 
 ---
 
@@ -490,12 +557,12 @@ Restore blocks from the specified archive file
   </TabItem>
   <TabItem value="example" label="Example">
 
-    server --block-time 1000
+    server --block-time 2
 
   </TabItem>
 </Tabs>
 
-Sets block production time in seconds. Default: `2`
+Sets minimum block time in seconds (at least `1` s). Default: `2`
 
 ---
 
@@ -557,24 +624,6 @@ If omitted, logs would be written to console.
 
 ---
 
-<h4><i>max-account-demotions</i></h4>
-<Tabs>
-  <TabItem value="syntax" label="Syntax" default>
-
-    server [--max-account-demotions MAX_DEMOTIONS]
-
-  </TabItem>
-  <TabItem value="example" label="Example">
-
-    server --max-account-demotions 5
-
-  </TabItem>
-</Tabs>
-
-Sets the flag for maximum account demontion counter limit in the pool. Default: `10`.
-
----
-
 <h4><i>enable-graphql</i></h4>
 <Tabs>
   <TabItem value="syntax" label="Syntax" default>
@@ -602,7 +651,7 @@ Sets the flag indicating that node enable graphql service. Default: `false`.
   </TabItem>
   <TabItem value="example" label="Example">
 
-    server --graphql-address :13579
+    server --graphql-address :9898
 
   </TabItem>
 </Tabs>
@@ -625,7 +674,7 @@ The GraphQL interface. Default: `127.0.0.1:9898`.
   </TabItem>
 </Tabs>
 
-Account in the pool not promoted for a long time would be pruned. Default: `1800`.
+Account in the pool not promoted for a long time would be pruned. Default: `3600`.
 
 ---
 
@@ -638,7 +687,7 @@ Account in the pool not promoted for a long time would be pruned. Default: `1800
   </TabItem>
   <TabItem value="example" label="Example">
 
-    server --prune-tick-seconds 600
+    server --prune-tick-seconds 300
 
   </TabItem>
 </Tabs>
@@ -646,6 +695,139 @@ Account in the pool not promoted for a long time would be pruned. Default: `1800
 Tick seconds for pruning account future transactions in the pool. Default: `300`.
 Should not be larger than `promote-outdate-seconds` flag, otherwise, unknown errors 
 might happen.
+
+---
+
+<h4><i>leveldb.bloom-bits</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--leveldb.bloom-bits BLOOM_BITS]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --leveldb.bloom-bits 4096
+
+  </TabItem>
+</Tabs>
+
+Sets the bits of leveldb bloom filters. Default: `2048`.
+
+---
+
+<h4><i>leveldb.cache-size</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--leveldb.cache-size CACHE_MB_SIZE]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --leveldb.cache-size 2048
+
+  </TabItem>
+</Tabs>
+
+Sets the size of the leveldb cache in MB. Default: `1024`.
+
+---
+
+<h4><i>leveldb.handles</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--leveldb.handles OPEN_FILES]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --leveldb.handles 1024
+
+  </TabItem>
+</Tabs>
+
+Sets the number of handles to leveldb open files. Default: `512`.
+
+---
+
+<h4><i>leveldb.table-size</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--leveldb.table-size TBL_MB_SIZE]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --leveldb.table-size 8
+
+  </TabItem>
+</Tabs>
+
+Sets the leveldb 'sorted table' size in MB. Default: `8`.
+
+---
+
+<h4><i>leveldb.total-table-size</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--leveldb.total-table-size TOTAL_TBL_MB_SIZE]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --leveldb.total-table-size 32
+
+  </TabItem>
+</Tabs>
+
+Sets limits leveldb total size of 'sorted table' for each level in MB. Default: `32`.
+
+---
+
+<h4><i>pprof</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--pprof SHOULD_ENABLE_PPROF]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --pprof
+
+  </TabItem>
+</Tabs>
+
+Enables the pprof server. Default: `false`.
+
+---
+
+<h4><i>pprof-address</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--pprof-address SHOULD_ENABLE_PPROF]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --pprof-address 127.0.0.1:6060
+
+  </TabItem>
+</Tabs>
+
+Sets the address and port for the pprof service. Default address: `127.0.0.1:6060`.
 
 ---
 
