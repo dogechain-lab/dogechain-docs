@@ -43,9 +43,7 @@ The `--json` flag is supported on some commands. This flag instructs the command
   </TabItem>
 </Tabs>
 
-Sets the flag indicating that the client should seal blocks. Default: `true`. 
-
-Turn it off by explicitly setting it `false`.
+Sets the flag indicating that the client should seal blocks. Default: `false`. 
 
 ---
 
@@ -2173,6 +2171,44 @@ The beginning height of blocks in archive. Default: 0.
 </Tabs>
 
 The end height of blocks in archive.
+
+---
+
+<h4><i>zstd</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    backup [--zstd SHOULD_ENABLE_ZSTD]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    backup --zstd
+
+  </TabItem>
+</Tabs>
+
+Sets the flag indicating that backup enable zstd compression. Default: `false`. 
+
+---
+
+<h4><i>zstd-level</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    backup [--zstd-level COMPRESSION_LEVEL]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    backup --zstd-level 5
+
+  </TabItem>
+</Tabs>
+
+Sets the zstd compression level for backup, range 1-10. Default: `3`.
 
 ---
 
