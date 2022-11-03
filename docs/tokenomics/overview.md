@@ -5,7 +5,7 @@
     * On Dogechain: [0x7B4328c127B85369D9f82ca0503B000D09CF9180](https://explorer.dogechain.dog/address/0x7B4328c127B85369D9f82ca0503B000D09CF9180)
     * On Ethereum: [0x7B4328c127B85369D9f82ca0503B000D09CF9180](https://etherscan.io/address/0x7B4328c127B85369D9f82ca0503B000D09CF9180)
 
-![DC Tokenomics_Afterburn](/img/token/token-after-burn.png)
+![DC Tokenomics_Afterburn](/img/gov/token-after-burn.png)
 
 |      **Allocation**       |  **Amount**   |                      **Vesting**                       |                      **Wallet address**                      |
 | :-----------------------: | :-----------: | :----------------------------------------------------: | :----------------------------------------------------------: |
