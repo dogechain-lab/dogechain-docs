@@ -8,11 +8,13 @@ Full node deployment of the Dogechain blockchain.
 
 ## Requirements
 
-* vCPUs >= 4
-* Memory: at least 8GB
+* vCPUs >= 16
+* Memory: at least 32GB
 * Disk space
-    * at least 200GB for the data directory ( recommend SSD )
+    * at least 1TB for the data directory ( recommend SSD ), solid-state drive(SSD), gp3, 8k IOPS, 250MB/S throughput, read latency <1ms. (for the best performance， it will need NVMe SSD)
     * data disk mount to /data
+* Suggest m5zn.3xlarge instance type on AWS, c2-standard-16 on Google cloud.
+* A broadband Internet connection with upload/download speeds of 5 megabyte per second.
 * Linux os (one of them)
     * Ubuntu 20.04/22.04
     * CentOS 8.0+ / Rocky Linux 8.6 / Almalinux 8.6
@@ -22,6 +24,10 @@ Full node deployment of the Dogechain blockchain.
 * tar
 * gzip
 * [Latest Dogechain](https://github.com/dogechain-lab/dogechain/releases)
+
+## Snapshots
+
+* https://github.com/dogechain-lab/dogechain-snapshots
 
 ## Download && Installation
 
