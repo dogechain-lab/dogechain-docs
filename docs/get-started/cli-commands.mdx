@@ -16,7 +16,7 @@ The `--json` flag is supported on some commands. This flag instructs the command
 
 ## Reference Version
 
-**`v1.1.3`**
+**`v1.2.0`**
 
 ## Startup Commands
 
@@ -127,6 +127,27 @@ Turn it off by setting `0`.
 Sets the max block range to be considered when executing json-rpc requests that consider fromBlock/toBlock values. Default `100`.
 
 Turn it off by setting `0`.
+
+---
+
+<h4><i>json-rpc-namespace</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    server [--json-rpc-namespace NAMESPACES]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    server --json-rpc-namespace "eth,net,web3,txpool,debug"
+    server --json-rpc-namespace "eth,web3"
+    server --json-rpc-namespace "*"
+
+  </TabItem>
+</Tabs>
+
+Sets the jsonrpc endpoint namespaces should be enabled (eth, net, web3, txpool, debug. concatenate with commas or * for all). Default `*`.
 
 ---
 
@@ -2141,7 +2162,7 @@ Path of archive file to save.
 <Tabs>
   <TabItem value="syntax" label="Syntax" default>
 
-    from [--from FROM]
+    backup [--from FROM]
 
   </TabItem>
   <TabItem value="example" label="Example">
@@ -2155,12 +2176,31 @@ The beginning height of blocks in archive. Default: 0.
 
 ---
 
+<h4><i>overwrite-file</i></h4>
+
+<Tabs>
+  <TabItem value="syntax" label="Syntax" default>
+
+    backup [--overwrite-file FILE]
+
+  </TabItem>
+  <TabItem value="example" label="Example">
+
+    backup --overwrite-file ./dogechain-snapshot.zst
+
+  </TabItem>
+</Tabs>
+
+The end height of blocks in archive.
+
+---
+
 <h4><i>to</i></h4>
 
 <Tabs>
   <TabItem value="syntax" label="Syntax" default>
 
-    to [--to TO]
+    backup [--to TO]
 
   </TabItem>
   <TabItem value="example" label="Example">
