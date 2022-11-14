@@ -150,7 +150,8 @@ $ chown -R dogechain:dogechain /etc/dogechain
             "EIP150": 0,
             "EIP158": 0,
             "EIP155": 0,
-            "portland": 1981991
+            "portland": 1981991,
+            "detroit": 4490834 
         },
         "chainID": 2000,
         "engine": {
