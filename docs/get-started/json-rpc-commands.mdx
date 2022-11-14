@@ -936,3 +936,40 @@ curl https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/jso
 ```
 
 <JsonRpcTerminal method="txpool_status" params={[]} network="https://rpc-testnet.dogechain.dog"/>
+
+## debug
+
+### debug_traceTransaction
+
+Returns the trace information about an inclueded transaction requested by transaction hash. The debugging method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash.
+
+---
+
+<h4><i>Parameters:</i></h4>
+
+*  <b> DATA, 32 Bytes </b> - hash of a transaction
+
+<h4><i>Returns:</i></h4>
+<b> Object </b> - An execution result object, or null when no transaction was found or not-tracable:
+
+*  <b>  gas: QUANTITY </b> - total used of the transaction.
+*  <b>  failed: Boolean </b> - execution failed or not.
+*  <b>  returnValue: DATA </b> - return data or error message when reverted.
+*  <b>  structLogs: Array </b> - Array of structLog objects with the following params:
+    * <b> pc: QUANTITY </b> - program counter.
+    * <b> op: String </b> - opcode name.
+    * <b> gas: QUANTITY </b> - gas before executing.
+    * <b> gasCost: QUANTITY </b> - gas used in this pc.
+    * <b> depth: QUANTITY </b> - depth of call stack.
+    * <b> error: String </b> - error message if any.
+    * <b> stack: Array </b> - Array printing of stack if any.
+    * <b> memory: Array </b> - Array printing of memory in 32 bytes hex string if any.
+    * <b> storage: Object </b> - Exists when any storage opcode executed.
+
+<h4><i>Example:</i></h4>
+
+```bash
+curl https://rpc-testnet.dogechain.dog -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"debug_traceTransaction","params":["0xf00d6907863242bb3c305babb2abdc34ea2b57e2a5b2b2808ce9bd4777c74f98"],"id":1}'
+```
+
+<JsonRpcTerminal method="debug_traceTransaction" params={["0xf00d6907863242bb3c305babb2abdc34ea2b57e2a5b2b2808ce9bd4777c74f98"]} network="https://rpc-testnet.dogechain.dog"/>
