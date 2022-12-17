@@ -17,12 +17,8 @@ sidebar_label: Overview
 * Bridge: https://bridge.dogechain.dog
 * RPC Endpoints:
     * https://rpc01.dogechain.dog
-    * https://rpc-sg.dogechain.dog
     * https://rpc-us.dogechain.dog
     * https://rpc.dogechain.dog
-    * https://rpc01-sg.dogechain.dog
-    * https://rpc02-sg.dogechain.dog
-    * https://rpc03-sg.dogechain.dog
 * Ankr RPC Endpoints:
     * https://dogechain.ankr.com
     * https://dogechain-sj.ankr.com
