@@ -150,7 +150,8 @@ $ chown -R dogechain:dogechain /etc/dogechain
             "EIP150": 0,
             "EIP158": 0,
             "EIP155": 0,
-            "portland": 1981991
+            "portland": 1981991,
+            "detroit": 4490834 
         },
         "chainID": 2000,
         "engine": {
@@ -165,7 +166,7 @@ $ chown -R dogechain:dogechain /etc/dogechain
         "/ip4/13.215.12.187/tcp/1478/p2p/16Uiu2HAmT4Ck1nrsDybwcodGccnFSWfCgLBF7qZsrf6TdfsLBwLh",
         "/ip4/13.250.197.131/tcp/1478/p2p/16Uiu2HAmQ9QxiZ29mrT3N6JM7jRQduuKeXCHEVdcqfJki6K8dqDS",
         "/ip4/18.141.102.151/tcp/1478/p2p/16Uiu2HAmJsVwfwh7rLzGzVcK1CjbmBqzj5sVGXwQeKtLmSP5sXkK",
-        "/ip4/3.144.193.134/tcp/1478/p2p/16Uiu2HAmP2pQiXKrdCwfLbLhfbyN3CosELLVq6CiucXEyipAtb4u",
+        "/ip4/3.144.193.134/tcp/1478/p2p/16Uiu2HAmBiHY3GkvMfN7qpX2VsBSepz9WMqvFN3j3MF1AMdTwXHm",
         "/ip4/3.17.5.141/tcp/1478/p2p/16Uiu2HAm5QD4KHCc8tU4uP2GhBpzqxAQD61FVrLPeqKA3Ecw8ZmP",
         "/ip4/13.59.177.112/tcp/1478/p2p/16Uiu2HAmJKcLRBgpHLpmTdNaaKMCbZ9kv25KNugxVd6Bj3sgDBWT"
     ]
