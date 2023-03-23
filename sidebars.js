@@ -86,7 +86,8 @@ module.exports = {
             label: 'Community',
             items: [
                 'community/propose-new-feature',
-                'community/report-bug'
+                'community/report-bug',
+                'community/create-a-dog20-coin'
             ]
         },
     ]
