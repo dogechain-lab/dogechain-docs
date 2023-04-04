@@ -163,12 +163,11 @@ $ chown -R dogechain:dogechain /etc/dogechain
         "blockGasTarget": 0
     },
     "bootnodes": [
-        "/ip4/13.215.12.187/tcp/1478/p2p/16Uiu2HAmT4Ck1nrsDybwcodGccnFSWfCgLBF7qZsrf6TdfsLBwLh",
-        "/ip4/13.250.197.131/tcp/1478/p2p/16Uiu2HAmQ9QxiZ29mrT3N6JM7jRQduuKeXCHEVdcqfJki6K8dqDS",
-        "/ip4/18.141.102.151/tcp/1478/p2p/16Uiu2HAmJsVwfwh7rLzGzVcK1CjbmBqzj5sVGXwQeKtLmSP5sXkK",
-        "/ip4/3.144.193.134/tcp/1478/p2p/16Uiu2HAmBiHY3GkvMfN7qpX2VsBSepz9WMqvFN3j3MF1AMdTwXHm",
-        "/ip4/3.17.5.141/tcp/1478/p2p/16Uiu2HAm5QD4KHCc8tU4uP2GhBpzqxAQD61FVrLPeqKA3Ecw8ZmP",
-        "/ip4/13.59.177.112/tcp/1478/p2p/16Uiu2HAmJKcLRBgpHLpmTdNaaKMCbZ9kv25KNugxVd6Bj3sgDBWT"
+        "/ip4/34.197.32.244/tcp/1478/p2p/16Uiu2HAm45Cr88TzYTZMHYeDnbn6EgumJF7o13ENCzgHhgne8yYS",
+        "/ip4/18.119.72.163/tcp/1478/p2p/16Uiu2HAmNbBDoMkL92dVaZGYPVnGN2Uz6eNiJYU37vXgkLGA8qi7",
+        "/ip4/13.52.109.54/tcp/1478/p2p/16Uiu2HAmSmfNAnwaEdQ4nWBYty3oZctCGbX3wFkgyiPwphBb4tQv",
+        "/ip4/35.166.242.118/tcp/1478/p2p/16Uiu2HAmBjYDdpsosoF7A4E9YMS1WGPrwaQHb1vXw4RjU5rzCDW5",
+        "/ip4/3.0.185.88/tcp/1478/p2p/16Uiu2HAm2tHyJHrEWVTqXc7meub5d1dxVP2foHTmx5y6ZQHHaBgu"
     ]
 }
 ```
