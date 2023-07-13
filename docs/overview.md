@@ -4,17 +4,24 @@ title: Dogechain
 sidebar_label: Overview
 ---
 
-## Testnet
+## Devnet
+* Explorer: https://explorer-devnet.dogechain.dog
+* ChainID:  668
+* Faucet:   https://devnet-faucet.dogechain.dog/
+* RPC Endpoints:
+    * https://rpc-devnet.dogechain.dog
+
+## Testnet(Deprecated)
 * Explorer: https://explorer-testnet.dogechain.dog
 * ChainID:  568
-* Faucet:  https://faucet.dogechain.dog
+* Faucet:   https://faucet.dogechain.dog
 * RPC Endpoints:
     * https://rpc-testnet.dogechain.dog
 
 ## Mainnet
 * Explorer: https://explorer.dogechain.dog
-* ChainID: 2000
-* Bridge: https://bridge.dogechain.dog
+* ChainID:  2000
+* Bridge:   https://bridge.dogechain.dog
 * RPC Endpoints:
     * https://rpc.dogechain.dog
     * https://rpc-us.dogechain.dog
