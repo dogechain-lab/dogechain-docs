@@ -214,7 +214,8 @@ ExecStart=/usr/local/bin/dogechain server \
     --enable-graphql \
     --graphql-address=0.0.0.0:9898 \
     --max-inbound-peers=128 \
-    --max-outbound-peers=16
+    --max-outbound-peers=16 \
+    --price-limit=250000000000
 
 EOF
 
