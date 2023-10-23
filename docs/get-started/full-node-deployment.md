@@ -274,6 +274,10 @@ To be done.
 
 ## Create systemd service
 
+The bootnodes are hosted by the official network, and not yet set within the codes. So you need to set it on command line or in static node file.
+
+Remember `daemon-reload` your system config and re-run your dbsc client, if you change the bootnodes or other configuration.
+
 ```shell
 $ tee /etc/systemd/system/dbsc.service <<EOF
 [Unit]
@@ -298,10 +302,10 @@ LimitNOFILE=65535
 LimitNPROC=65535
 PrivateTmp=true
 # MemoryMax setting replaces MemoryLimit in newer systemd versions
-MemoryMax=6G
-MemoryHigh=5G
+MemoryMax=15G
+MemoryHigh=15G
 # keep MemoryLimit for compatibility with older systemd versions
-MemoryLimit=6G
+MemoryLimit=15G
 
 WorkingDirectory=/var/lib/dbsc
 ExecStart=/usr/local/bin/geth \
@@ -313,7 +317,9 @@ ExecStart=/usr/local/bin/geth \
     --txlookuplimit=0 \
     --txpool.pricelimit=250000000000 \
     --miner.gasprice=250000000000 \
-    --miner.gaslimit=300000000
+    --miner.gaslimit=300000000 \
+    --bootnodes="enode://c2d67c2fc2bd060a77bc850430a87fd8847d689302f6447c1cfef1422e2d0d91607574d4a7707ca57c20c4ecc94b0561653f5ade5ed15065954479fcbb306eee@54.210.49.16:30303,enode://38bd46ce29743660e236db29f50e049d3973c93cea835effc4f3cc642aab4e80baf9960906adb742ff676e0047b332f112cf723864d07c87319a277bf420ccbe@44.207.147.216:30303"
+
 EOF
 
 ```
@@ -323,8 +329,7 @@ EOF
 ```ini
 ......
 ExecStart= ......
-    --max-outbound-peers=16 \
-    --nat=XXX.XXX.XXX.XXX:1478
+    --nat=extip:${your ipv4 or ipv6 here}
 
 ```
 
