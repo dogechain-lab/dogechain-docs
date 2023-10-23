@@ -33,8 +33,7 @@ Dogechain is built on Polygon Edge, which lets the project bootstrap a new block
 
 Industry standard wallets can be used to interact with Dogechain through the [JSON-RPC](/docs/working-with-node/query-json-rpc) endpoints and node operators can perform various actions on the nodes through the [gRPC](/docs/working-with-node/query-operator-info) protocol.
 
-To find out more about dogechain-lab, visit the [official website](https://dogecoin.community).
-
+To find out more about dogechain-lab, visit the [official website](https://dogechain.dog).
 
 **[GitHub repository](https://github.com/dogechain-lab/dogechain)**
 
