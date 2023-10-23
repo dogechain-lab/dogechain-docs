@@ -36,39 +36,38 @@ Full node deployment of the Dogechain blockchain.
 * wget:
 
 ```shell
-$ DOGECHAIN_VERSION=$(wget -qO- https://api.github.com/repos/dogechain-lab/dbsc/releases/latest | grep tag_name | cut -d '"' -f 4 | cut -d 'v' -f 2)
-$ wget -c https://github.com/dogechain-lab/dbsc/releases/download/v${DOGECHAIN_VERSION}/dogechain_${DOGECHAIN_VERSION}_linux_amd64.tar.gz
+DOGECHAIN_VERSION=$(wget -qO- https://api.github.com/repos/dogechain-lab/dbsc/releases/latest | grep tag_name | cut -d '"' -f 4 | cut -d 'v' -f 2)
+# You should check the binary architecture to meet your platform.
+wget -c https://github.com/dogechain-lab/dbsc/releases/download/v${DOGECHAIN_VERSION}/geth_linux
 ```
 
 * curl:
 
 ```shell
-$ DOGECHAIN_VERSION=$(curl -s https://api.github.com/repos/dogechain-lab/dbsc/releases/latest | grep tag_name | cut -d '"' -f 4 | cut -d 'v' -f 2)
-$ curl -OL https://github.com/dogechain-lab/dbsc/releases/download/v${DOGECHAIN_VERSION}/dogechain_${DOGECHAIN_VERSION}_linux_amd64.tar.gz
+DOGECHAIN_VERSION=$(curl -s https://api.github.com/repos/dogechain-lab/dbsc/releases/latest | grep tag_name | cut -d '"' -f 4 | cut -d 'v' -f 2)
+# You should check the binary architecture to meet your platform.
+curl -OL https://github.com/dogechain-lab/dbsc/releases/download/v${DOGECHAIN_VERSION}/geth_linux
 ```
 
 ## copy binary to /usr/local/bin
 
 ```shell
-$ tar -xvf dogechain_${DOGECHAIN_VERSION}_linux_amd64.tar.gz
-$ cp dogechain /usr/local/bin/dogechain
-$ chmod +x /usr/local/bin/dogechain
+cp geth_linux /usr/local/bin/geth
+chmod +x /usr/local/bin/geth
 ```
 
 ## Create system user
 
 ```shell
-$ useradd -m -s /usr/sbin/nologin -d /var/lib/dogechain dogechain
+useradd -m -s /usr/sbin/nologin -d /var/lib/dogechain dogechain
 ```
 
 ## Create Data Directory
 
 ```shell
-$ mkdir -p /data/dbsc
-$ mkdir -p /etc/dbsc
+mkdir -p /data/dbsc
 # set permission
-$ chown -R dogechain:dogechain /data/dbsc
-$ chown -R dogechain:dogechain /etc/dbsc
+chown -R dogechain:dogechain /data/dbsc
 ```
 
 ## Copy genesis.json to etc directory
@@ -336,19 +335,19 @@ ExecStart= ......
 ### Start service
 
 ```shell
-$ systemctl daemon-reload
-$ systemctl enable dbsc
-$ systemctl start dbsc
+systemctl daemon-reload
+systemctl enable dbsc
+systemctl start dbsc
 ```
 
 ### Check service status
 
 ```shell
-$ systemctl status dbsc
+systemctl status dbsc
 ```
 
 ### Check service logs
 
 ```shell
-$ journalctl -u dbsc
+journalctl -u dbsc
 ```
