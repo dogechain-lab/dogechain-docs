@@ -8,6 +8,7 @@ module.exports = {
                 'get-started/tutorials',
                 'get-started/full-node-deployment',
                 'get-started/run-archive-node',
+                'get-started/upgrade-full-node',
                 'get-started/installation',
                 'get-started/performance-reports',
             ]
