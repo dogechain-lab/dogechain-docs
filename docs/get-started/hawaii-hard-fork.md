@@ -1,5 +1,5 @@
 ---
-id: Hawaii-hard-fork
+id: hawaii-hard-fork
 title: Hawaii Hark Fork
 ---
 
