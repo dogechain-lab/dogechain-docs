@@ -310,6 +310,7 @@ WorkingDirectory=/data/dbsc/
 ExecStart=/usr/local/bin/geth \\
     --datadir=/data/dbsc/data \\
     --genesis=/data/dbsc/genesis.json \\
+    --bootnodes="enode://38bd46ce29743660e236db29f50e049d3973c93cea835effc4f3cc642aab4e80baf9960906adb742ff676e0047b332f112cf723864d07c87319a277bf420ccbe@44.207.147.216:30303,enode://c2d67c2fc2bd060a77bc850430a87fd8847d689302f6447c1cfef1422e2d0d91607574d4a7707ca57c20c4ecc94b0561653f5ade5ed15065954479fcbb306eee@54.210.49.16:30303" \\
     --syncmode=snap \\
     --gcmode=full \\
     --networkid=2000 \\
