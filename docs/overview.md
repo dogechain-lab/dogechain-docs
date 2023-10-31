@@ -10,13 +10,15 @@ sidebar_label: Overview
 * Faucet:   https://devnet-faucet.dogechain.dog/
 * RPC Endpoints:
     * https://rpc-devnet.dogechain.dog
+* Status: Completed Hawaii Fork.
 
-## Testnet(Deprecated)
+## Testnet
 * Explorer: https://explorer-testnet.dogechain.dog
 * ChainID:  568
 * Faucet:   https://faucet.dogechain.dog
 * RPC Endpoints:
     * https://rpc-testnet.dogechain.dog
+* Status: Redeployed. Completed Hawaii Fork. 
 
 ## Mainnet
 * Explorer: https://explorer.dogechain.dog
@@ -24,19 +26,13 @@ sidebar_label: Overview
 * Bridge:   https://bridge.dogechain.dog
 * RPC Endpoints:
     * https://rpc.dogechain.dog
-    * https://rpc-us.dogechain.dog
-    * https://rpc01.dogechain.dog
-* Ankr RPC Endpoints:
-    * https://rpc.ankr.com/dogechain
+    * https://rpc-ancient.dogechain.dog (Deprecated. Only for historical `eth_call` during Hawaii Fork)
+* Status: Completed Detroit Fork.
 
-Dogechain is built on Polygon Edge, which lets the project bootstrap a new blockchain network while providing full compatibility with Ethereum smart contracts and transactions. It uses IBFT (Istanbul Byzantine Fault Tolerant) consensus mechanism, supported [PoS (proof of stake)](/docs/consensus/pos-stake-unstake).
+Dogechain is powered by Dogechain team and Polygon, and now supports [PoS (proof of stake)](/docs/consensus/pos-stake-unstake).
 
-Industry standard wallets can be used to interact with Dogechain through the [JSON-RPC](/docs/working-with-node/query-json-rpc) endpoints and node operators can perform various actions on the nodes through the [gRPC](/docs/working-with-node/query-operator-info) protocol.
+Industry standard wallets can be used to interact with Dogechain through the [JSON-RPC](/docs/working-with-node/query-json-rpc) endpoints.
 
-To find out more about dogechain-lab, visit the [official website](https://dogechain.dog).
+To find out more information and products about dogechain-lab, please visit [the official website](https://dogechain.dog/).
 
-**[GitHub repository](https://github.com/dogechain-lab/dogechain)**
-
-
-
-To get started by running a `Dogechain` network locally, please read: [Installation](/docs/get-started/installation) and [Local Setup](/docs/get-started/set-up-ibft-locally).
+Any suggestions or contributions are welcome on [our GitHub page](https://github.com/dogechain-lab/) 
