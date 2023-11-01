@@ -76,6 +76,8 @@ chown -R dogechain:dogechain /data/dbsc
 
 You need to upgrade `genesis.json` after **Hawaii Fork**. Otherwise your client will not follow up to the network.
 
+Before the **Hawaii Fork** (block height `18980451`), you need to use [static-nodes.json](/assests/static-nodes.json) connent to deprecated bootnodes (The file is placed in `{datadir}/geth` directory)
+
 We'll upgrade our network consensus and engine layer during the hard fork.
 
 Genesis files are also included in the latest release of `mainnet.zip`, including `genesis-before-hawaii.json` and `genesis-after-hawaii.json`.
