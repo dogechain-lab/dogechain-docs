@@ -10,6 +10,7 @@ module.exports = {
                 'get-started/run-archive-node',
                 'get-started/hawaii-hard-fork',
                 'get-started/upgrade-full-node',
+                'get-started/bootnode-list',
                 'get-started/installation',
                 'get-started/performance-reports',
             ]

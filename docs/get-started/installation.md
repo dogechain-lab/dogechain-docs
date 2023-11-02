@@ -15,24 +15,6 @@ Dogechain comes with cross-compiled AMD64/ARM64 binaries for Darwin and Linux.
 
 Please refer to the [GitHub Releases](https://github.com/dogechain-lab/dbsc/releases) page for a list of releases.
 
-### V1
-
-**Deprecated**, will be deleted after Hawaii Fork. Please refer to the [GitHub Releases](https://github.com/dogechain-lab/dogechain/releases) page for a list of releases.
-
----
-
-## Docker image
-
-### V2
-
-To be done.
-
-### V1
-
-**Deprecated**. Official Docker images are hosted under the [hub.docker.com registry](https://hub.docker.com/r/dogechainlab/dogechain).
-
-`docker pull dogechainlab/dogechain:latest`
-
 ---
 
 ## Building from source
