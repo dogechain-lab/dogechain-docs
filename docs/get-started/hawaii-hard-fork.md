@@ -14,7 +14,8 @@ Your dAPP might not perfectly work on it due to different RPC and EVM behavior, 
 ## Upgrade guide
 
 * [Download the Dogechain V2 Snapshots](https://github.com/dogechain-lab/dogechain-snapshots) and unzip it.
-  * The snapshot zstd file is huge (**1.8TiB**), you'd better download it to an **at least 5TiB** driver.
+  * The ancient snapshot zstd file is huge (**1TiB**), you'd better download it to an **at least 2TiB** driver.
+  * Pruned snapshot need **46GiB**, you'd better download it to an **at least 200GiB** driver.
 * Run your own [Full Node](./full-node-deployment) or [Archive Node](./run-archive-node) if you wish to.
   * "full" and "archive" `gcmode` behave exactly like `geth`.
   * The `genesis-before-hawaii.json` and `genesis-after-hawaii.json` are provided on [this section](./full-node-deployment#copy-genesisjson-to-etc-directory). You should switch `genesis.json` during `Hawaii Fork`.
