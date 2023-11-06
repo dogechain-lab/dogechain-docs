@@ -420,7 +420,7 @@ ExecStart=/usr/local/bin/geth \\
     --txlookuplimit=0 \\
     --txpool.pricelimit=250000000000 \\
     --miner.gasprice=250000000000 \\
-    --miner.gaslimit=300000000
+    --miner.gaslimit=30000000
 
 SERVICE_EOF
 ```

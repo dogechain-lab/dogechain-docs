@@ -46,7 +46,7 @@ You can get snapshot from BNB Chain official documentation:
 	--txlookuplimit=0 \
 	--txpool.pricelimit=250000000000 \
 	--miner.gasprice=250000000000 \
-	--miner.gaslimit=300000000
+	--miner.gaslimit=30000000
 ```
 
 #### 2. Build one full archive node with segmented archive nodes
