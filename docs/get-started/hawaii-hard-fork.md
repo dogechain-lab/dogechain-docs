@@ -24,15 +24,29 @@ Your dAPP might not perfectly work on it due to different RPC and EVM behavior, 
 
 ## Impacts
 
-* Offline signature sdk
+**Important notes** for all the users and developers.
+
+* Offline Signature SDK
   * Transaction needs to be signed with chain id.
   * You might need to adjust your priority fee to at least 250GWei to make sure it won't failed when calling method without visiting `eth_gasPrice`.
 
-* RPC interface
+* RPC Interface
   * Much of it is the same as before and is compatible with the Ethereum RPC API.
 
-* Transaction fees
+* Transaction Fees
   * Berlin fork is enabled, so it should be a little cheaper to visit already acceessed storage.
+
+* **Solidity Compatibility**
+  * Use EVM version less than or equal to `london(0.8.17)`. If you use a higher version of EVM than this, contract deployment or execution may fail.
+
+* **Metamask or Other Wallets**
+  * You need to adjust your estimated gas price to at least 250GWei manually. Metamask wallet will calulate priority price offline, and give out too low price estimations.
+
+![Alt text](/img/mm-setting-1.png)
+
+![Alt text](/img/mm-setting-2.png)
+
+![Alt text](/img/mm-setting-3.png)
 
 ## Contributions
 
