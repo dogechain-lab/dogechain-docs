@@ -46,6 +46,8 @@ Your dAPP might not perfectly work on it due to different RPC and EVM behavior, 
 
 ![Alt text](/img/mm-setting-2.png)
 
+![image-20231218170525934](/img/mm-setting-3-1.png)
+
 ![Alt text](/img/mm-setting-3.png)
 
 ## Contributions
