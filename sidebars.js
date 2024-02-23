@@ -1,5 +1,27 @@
 module.exports = {
-    develop: [
+    zkevm: [
+        'zkevm/overview',
+        {
+            type: 'category', 
+            label: 'Get started',
+            items: [
+                'zkevm/quick-start/connect-wallet',
+                'zkevm/quick-start/zkevm-faucet',
+                'zkevm/quick-start/bridge-to-zkevm',
+            ]
+        },
+        {
+            type: 'category', 
+            label: 'How to',
+            items: [
+                'zkevm/how-to/write-contract',
+                'zkevm/how-to/using-foundry',
+                'zkevm/how-to/using-hardhat',
+                'zkevm/how-to/verify-contract',
+            ]
+        }
+    ],
+    default: [
         'overview',
         {
             type: 'category',

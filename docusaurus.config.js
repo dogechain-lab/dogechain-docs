@@ -6,7 +6,7 @@ module.exports = {
     url: 'https://docs.dogechain.dog',
     baseUrl: '/',
     onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'warn',
+    onBrokenMarkdownLinks: 'throw',
     favicon: 'img/logo.png',
     organizationName: 'dogechain-lab',
     projectName: 'dogechain-docs',
@@ -39,6 +39,12 @@ module.exports = {
                     to: 'docs/overview',
                     activeBasePath: 'docs/',
                     label: 'Developers',
+                    position: 'left'
+                },
+                {
+                    to: 'docs/zkevm/overview',
+                    activeBasePath: 'docs/',
+                    label: 'zkEVM',
                     position: 'left'
                 },
                 {
