@@ -82,14 +82,14 @@ We will be using the ready-made `Storage.sol` contract in Remix. Compile the con
 1. Deploy the `Storage.sol` contract:
 
     - Click the **Deploy** icon on the left-side of the IDE window.
-    - Change `ENVIRONMENT` to "Injected Provider - MetaMask" (ensure that your wallet is already connected to Goërli network).
+    - Change `ENVIRONMENT` to "Injected Provider - MetaMask" (ensure that your wallet is already connected to Sepolia network).
     - Confirm the connection request when MetaMask pops up.
     - Click the **Deploy** button and confirm.
 
 2. Check the deployed smart contract on Etherscan:
 
     - Copy the contract address below the **Deploy Contracts**.
-    - Navigate to the [Goërli explorer](https://goerli.etherscan.io).
+    - Navigate to the [Sepolia explorer](https://sepolia.etherscan.io).
     - Paste the contract address in the _Search by address_ field and press **ENTER**.
     - Click on the **Transaction Hash** to see transaction details.
 
@@ -111,7 +111,7 @@ We will be using the ready-made `Storage.sol` contract in Remix. Compile the con
 
     - Click on the Etherscan icon.
 
-    - Ensure that **Goërli** is present in the **Selected Network** field.
+    - Ensure that **Sepolia** is present in the **Selected Network** field.
 
     - Click within the _Contract Name_ field and type in the name of your deployed contract, or select it if it appears.
 
