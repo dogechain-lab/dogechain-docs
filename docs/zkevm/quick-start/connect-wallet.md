@@ -12,9 +12,9 @@ Connect to either the Dogechain zkEVM's mainnet or the testnet.
 
 Add the Dogechain zkEVM network of your choice to your wallet by navigating to the add network input, and enter the respective network details as given in the below table:
 
-| Network | RPC URL | ChainID | Block Explorer URL | Currency |
-| ------- | ------------------------------- | ---------------- | ---------------- | ----- |
-| Testnet | `https://rpc.testnet-cdk.dogechain.dog` | `2024115` | `https://explorer.testnet-cdk.dogechain.dog` | **ETH** |
+| Network | RPC URL | ChainID | Block Explorer URL | Bridge |Currency |
+| ------- | ------------------------------ | --------------- | --------------- | --------------- | ----- |
+| Testnet | `https://rpc.testnet-cdk.dogechain.dog` | `2024115` | `https://explorer.testnet-cdk.dogechain.dog` | `https://bridge.testnet-cdk.dogechain.dog` | **ETH** |
 
 <!-- Here is a video tutorial on how to add Dogechain zkEVM Testnet to MetaMask and deploy smart contracts:
 

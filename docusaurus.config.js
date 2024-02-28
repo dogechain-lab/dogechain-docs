@@ -38,13 +38,13 @@ module.exports = {
                 {
                     to: 'docs/overview',
                     activeBasePath: 'docs/',
-                    label: 'Dogechain Legacy',
+                    label: 'Dogechain PoS',
                     position: 'left'
                 },
                 {
                     to: 'docs/zkevm/overview',
                     activeBasePath: 'docs/',
-                    label: 'zkEVM',
+                    label: 'Dogechain zkEVM',
                     position: 'left'
                 },
                 {
