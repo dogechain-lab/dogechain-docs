@@ -15,7 +15,7 @@ The faucet allows anyone to request ETH testnet tokens, such as Sepolia testnet 
 !!!info
     Dogechain zkEVM network faucet provides 0.025 ETH in a single user request.
 
-    We understand that Goërli ETH holds value which might attract malicious actors. That is why, we have integrated certain security measures in place to prevent any DoS attacks on the Faucet.
+    We understand that Sepolia ETH holds value which might attract malicious actors. That is why, we have integrated certain security measures in place to prevent any DoS attacks on the Faucet.
 
 Here is how to use the Dogechain zkEVM faucet:
 
