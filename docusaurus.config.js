@@ -38,7 +38,7 @@ module.exports = {
                 {
                     to: 'docs/overview',
                     activeBasePath: 'docs/',
-                    label: 'Dogechain PoS',
+                    label: 'Dogechain Legacy',
                     position: 'left'
                 },
                 {
