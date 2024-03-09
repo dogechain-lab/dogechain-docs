@@ -44,7 +44,7 @@ module.exports = {
                 {
                     to: 'docs/zkevm/overview',
                     activeBasePath: 'docs/',
-                    label: 'zkEVM',
+                    label: 'Dogechain zkEVM',
                     position: 'left'
                 },
                 {
