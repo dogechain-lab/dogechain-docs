@@ -42,6 +42,12 @@ module.exports = {
                     position: 'left'
                 },
                 {
+                    to: 'docs/drc20/overview',
+                    activeBasePath: 'docs/',
+                    label: 'DRC20 Bridge (PawPort)',
+                    position: 'left'
+                },
+                {
                     to: 'docs/zkevm/overview',
                     activeBasePath: 'docs/',
                     label: 'Dogechain zkEVM',
