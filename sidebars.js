@@ -21,6 +21,9 @@ module.exports = {
             ]
         }
     ],
+    drc20: [
+        'drc20/overview',
+    ],
     default: [
         'overview',
         {
