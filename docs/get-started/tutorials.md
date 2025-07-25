@@ -18,3 +18,4 @@ In this section, we have provided tutorials on usage of different components of 
 
 * Tutorial on [Hawaii fork upgrade guide](./hawaii-hard-fork)
 * Tutorial on [Official bootnode list](./bootnode-list)
+* [Ingore address list of hawaii fork](./hawaii-ignore-address-list)
